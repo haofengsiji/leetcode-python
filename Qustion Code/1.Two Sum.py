@@ -1,3 +1,14 @@
+"""
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        dict1 = {}
+        for i in range(len(nums)):
+            if target - nums[i] in dict1:
+                j = dict1.get(target - nums[i])
+                return [j,i]
+            dict1[nums[i]] = i
+"""
+
 class Solution(object):
     def twoSum(self, nums, target):
         """
