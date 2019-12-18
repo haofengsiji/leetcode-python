@@ -6,8 +6,9 @@
 
 | #    | Title                                                        | Solution                                                     | Basic idea                                                   |
 | ---- | ------------------------------------------------------------ | ------------------------------------------------------------ | :----------------------------------------------------------- |
-| 1    | [Two Sum](https://leetcode.com/problems/two-sum/)            | [python](https://github.com/haofengsiji/Myleetcode-python/blob/master/Qustion%20Code/1.Two%20Sum.py) | 1.try one by one <br />2.find `target - num` (hash_table)    |
-| 2    | [Median of Two Sorted Arrays](https://leetcode.com/problems/median-of-two-sorted-arrays/) | [python](https://github.com/haofengsiji/Myleetcode-python/blob/master/Qustion%20Code/4.%20Median%20of%20Two%20Sorted%20Arrays.py) | 1.Brute force(sort firstly,then median)<br />2.Binary Search |
+| 1    | [Two Sum](https://leetcode.com/problems/two-sum/)            | [python](https://github.com/haofengsiji/Myleetcode-python/blob/master/Qustion%20Code/1.Two%20Sum.py) | 1.try one by one <br />T: $O(n^2)$ S:$O(1)$<br />2.find `target - num` (hash_table)<br /> key: nums -> value: index<br />T: $O(n)$ S: $O(n)$ |
+| 2    | Add Two Numbers                                              | python                                                       | 1.link2num;num2link                                          |
+| 4    | [Median of Two Sorted Arrays](https://leetcode.com/problems/median-of-two-sorted-arrays/) | [python](https://github.com/haofengsiji/Myleetcode-python/blob/master/Qustion%20Code/4.%20Median%20of%20Two%20Sorted%20Arrays.py) | 1.Brute force(sort firstly,then median)<br />2.Binary Search |
 
 
 
