@@ -21,7 +21,6 @@ class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
         start = 0
         ans = 0
-        max_ans = 0
         dic = {}
         for end,c in enumerate(s):
             if c in dic:    
