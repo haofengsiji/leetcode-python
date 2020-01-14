@@ -24,3 +24,12 @@ class Solution:
             return -2**31
         else:
             return s
+
+# # method_2
+# class Solution:
+#     def myAtoi(self, s: str) -> int:
+#         s = int(*re.findall('^[\+\-]?\d+', s.lstrip()))
+#         s = max(s,-2**31)
+#         s = min(s,2**31-1)
+#         return s
+        
