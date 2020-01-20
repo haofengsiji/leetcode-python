@@ -1,32 +1,25 @@
+class ListNode:
+    def __init__(self, x):
+        self.val = x
+        self.next = None
+
 class Solution:
-    def threeSum(self, nums):
-        nums.sort()
-        n = len(nums)
-        ans = []
-        for i in range(n):
-            # 头部去重
-            if i > 0 and nums[i] == nums[i-1]:
-                continue
-            L = i+1
-            R = n-1
-            while L < R:
-                # 中间部去重
-                if L > i+1 and nums[L] == nums[L-1]:
-                    L += 1
-                # 无重复，且存在三元素和为零
-                elif nums[i] + nums[L] + nums[R] == 0:
-                    ans.append([nums[i],nums[L],nums[R]])
-                    L += 1
-                    R -= 1
-                # 向左移
-                elif nums[i] + nums[L] + nums[R] > 0:
-                    R -= 1
-                elif nums[i] + nums[L] + nums[R] < 0:
-                    L += 1
-                else:
-                    raise NameError
-        return ans
+    def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
+        dummy = ListNode(None)
+        while True:
+            if l1.val == None or l2.val == None:
+                dummy.next = l1.val
+                l1.next = l2.val
+                break
+            elif l1.val < l2.val:
+                dummy.next = l1.val
+                l1 = l1.next
+            else:
+                dummy.next = l2.val
+                l2 = l2.next
+        return dummy.next
+
 if __name__ == "__main__":
     s = Solution()
 
-    print(s.threeSum([-2,0,1,1,2]))
+    print(s.mergeTwoLists(ListNode([1,2,3]),ListNode([1,2,3])))

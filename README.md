@@ -21,8 +21,9 @@
 | 13   | [Roman to Integer](https://leetcode-cn.com/problems/roman-to-integer/) | [python](https://github.com/haofengsiji/leetcode-python/blob/master/Qustion%20Code/13.%20Roman%20to%20Integer.py) | 1. Direct method<br />T：$O(n)$ S:$O(1)$<br />2. [Math trick](https://leetcode-cn.com/problems/roman-to-integer/solution/2-xing-python-on-by-knifezhu/)<br />T：$O(n)$ S:$O(1)$ |
 | 14   | [Longest Common Prefix](https://leetcode-cn.com/problems/longest-common-prefix/) | [python](https://github.com/haofengsiji/leetcode-python/blob/master/Qustion%20Code/14.%20Longest%20Common%20Prefix.py) | 1. <br />2. with help of set()<br />3.horizontal scan        |
 | 15   | [ 三数之和](https://leetcode-cn.com/problems/3sum/)          | python                                                       | 1.先排序帮助判断重复，然后三数之和转为两数之和，两数之和用hash表查找，用in判断是否重复<br />2.先排序，固定一个数，然后用双指针滑动，重复则跳过。 |
+| 21   | [合并两个有序链表](https://leetcode-cn.com/problems/merge-two-sorted-lists/) | python                                                       | 1[.构建一个新的列表dummy来存储结果](https://mp.weixin.qq.com/s?__biz=MzUyNjQxNjYyMg==&mid=2247487274&idx=3&sn=54d4233b4a6b71992022b38344ed3a0b&chksm=fa0e60abcd79e9bd27c9afce932536fa6f8ef80fde21ab96ebfb59cd3e12894993358ff2647e&scene=126&sessionid=1579499303&key=e24440588457eca66f8057e6b53c40bf9fa6199c5b6ee9bd54d8e4b9ee03faeaee8aa99fbe0a657863a63729772ada929f5501d6f63634d72f55d4730aab0d903572797087bd8290f50192c06179657c&ascene=1&uin=MzExOTA3MDE3Mw%3D%3D&devicetype=Windows+10&version=6208006f&lang=zh_CN&exportkey=AzSO59n6IRjiQBQO%2BTwM77A%3D&pass_ticket=yrjKRiSfNhp8nU3OrHEafWbWOztb5WdZ2KLx5QcB%2BX1KrwXlvHCLWW5%2F%2F%2BYdXarw)<br />2.[递归](https://leetcode-cn.com/problems/merge-two-sorted-lists/solution/he-bing-liang-ge-you-xu-lian-biao-by-leetcode/) |
 
-## Dynamic programming
+## 动态规划
 
 ​	
 
@@ -34,5 +35,24 @@
 
 ## 数据结构
 
+| #    | 题目                                                         | 备注 |
+| ---- | ------------------------------------------------------------ | ---- |
+| 21   | [合并两个有序链表](https://leetcode-cn.com/problems/merge-two-sorted-lists/) | 链表 |
+|      |                                                              |      |
+|      |                                                              |      |
+
+
+
 ## 分治算法
 
+| #    | 题目                                                        | 备注             |
+| ---- | ----------------------------------------------------------- | ---------------- |
+| 912  | [排序数组](https://leetcode-cn.com/problems/sort-an-array/) | 1.归并排序，分治 |
+|      |                                                             |                  |
+|      |                                                             |                  |
+
+
+
+## 贪心算法
+
+## 排序
