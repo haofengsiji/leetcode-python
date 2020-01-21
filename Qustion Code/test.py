@@ -7,7 +7,7 @@ class Solution:
     def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
         dummy = ListNode(None)
         while True:
-            if l1.val == None or l2.val == None:
+            if l1.next == None or l2.next == None:
                 dummy.next = l1.val
                 l1.next = l2.val
                 break
