@@ -1,5 +1,6 @@
 class Solution:
-    def findSubstring(self, s: str, words):
+    def findSubstring(self, s: str, words: List[str]) -> List[int]:
+        if s == "" or words == []: return []
         n = len(s)
         l_word = len(words[0])
         length = len(words)*l_word
@@ -17,23 +18,9 @@ class Solution:
                 hash2.setdefault(s[j:j+l_word], 0)
                 hash2[s[j:j+l_word]] += 1
             # 判断
-            for key in hash2:
-                if key in hash1 and hash1[key] == hash2[key]:
-                    continue
-                else:
-                    flag = False
-                    break
-                    
-            if flag == True:
-                out.append(i)
-            else:
-                flag == True
+            if hash1 == hash2:
+                 out.append(i)
             hash2 = {}
 
         return out 
                     
-
-if __name__ == "__main__":
-    s = Solution()
-
-    print(s.findSubstring("barfoothefoobarman",["foo","bar"]))
