@@ -25,14 +25,15 @@
 | 17   | [电话号码的字母组合](https://leetcode-cn.com/problems/letter-combinations-of-a-phone-number/) | python                                                       | 1.[**递归**，abc ->comb(a,comb(b,comb(c,'')))](https://leetcode-cn.com/problems/letter-combinations-of-a-phone-number/solution/1di-gui-by-haofengsiji/)<br />2.[直推，从前往后，与递归正好相反](https://leetcode-cn.com/problems/letter-combinations-of-a-phone-number/solution/dian-hua-hao-ma-de-zi-mu-zu-he-by-leetcode/) |
 | 18   | [四数之和](https://leetcode-cn.com/problems/4sum/)           | pytohn                                                       | 1.**排序**+**双指针**：四数->三数->两数                      |
 | 19   | [删除链表的倒数第N个节点](https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/) | python                                                       | 1.**双指针**                                                 |
-| 21   | [合并两个有序链表](https://leetcode-cn.com/problems/merge-two-sorted-lists/) | python                                                       | 1[.构建一个新的列表dummy来存储结果](https://mp.weixin.qq.com/s?__biz=MzUyNjQxNjYyMg==&mid=2247487274&idx=3&sn=54d4233b4a6b71992022b38344ed3a0b&chksm=fa0e60abcd79e9bd27c9afce932536fa6f8ef80fde21ab96ebfb59cd3e12894993358ff2647e&scene=126&sessionid=1579499303&key=e24440588457eca66f8057e6b53c40bf9fa6199c5b6ee9bd54d8e4b9ee03faeaee8aa99fbe0a657863a63729772ada929f5501d6f63634d72f55d4730aab0d903572797087bd8290f50192c06179657c&ascene=1&uin=MzExOTA3MDE3Mw%3D%3D&devicetype=Windows+10&version=6208006f&lang=zh_CN&exportkey=AzSO59n6IRjiQBQO%2BTwM77A%3D&pass_ticket=yrjKRiSfNhp8nU3OrHEafWbWOztb5WdZ2KLx5QcB%2BX1KrwXlvHCLWW5%2F%2F%2BYdXarw)<br />2.**[递归](https://leetcode-cn.com/problems/merge-two-sorted-lists/solution/he-bing-liang-ge-you-xu-lian-biao-by-leetcode/)**，每次弹出一个最小链表，剩下的在扔进函数里，直至一个链表为空，返回非空的链表。 |
+| 20   | [有效的括号](https://leetcode-cn.com/problems/valid-parentheses/) | python                                                       | 1.**栈**                                                     |
+| 21   | [合并两个有序链表](https://leetcode-cn.com/problems/merge-two-sorted-lists/) | python                                                       | 1[.构建一个新的列表dummy来存储结果](https://mp.weixin.qq.com/s?__biz=MzUyNjQxNjYyMg==&mid=2247487274&idx=3&sn=54d4233b4a6b71992022b38344ed3a0b&chksm=fa0e60abcd79e9bd27c9afce932536fa6f8ef80fde21ab96ebfb59cd3e12894993358ff2647e&scene=126&sessionid=1579499303&key=e24440588457eca66f8057e6b53c40bf9fa6199c5b6ee9bd54d8e4b9ee03faeaee8aa99fbe0a657863a63729772ada929f5501d6f63634d72f55d4730aab0d903572797087bd8290f50192c06179657c&ascene=1&uin=MzExOTA3MDE3Mw%3D%3D&devicetype=Windows+10&version=6208006f&lang=zh_CN&exportkey=AzSO59n6IRjiQBQO%2BTwM77A%3D&pass_ticket=yrjKRiSfNhp8nU3OrHEafWbWOztb5WdZ2KLx5QcB%2BX1KrwXlvHCLWW5%2F%2F%2BYdXarw)<br />2.**[递归](https://leetcode-cn.com/problems/merge-two-sorted-lists/solution/he-bing-liang-ge-you-xu-lian-biao-by-leetcode/)**，每次弹出一个最小链表，剩下的在扔进函数里，直至一个链表为空，返回非空的链表。<br />3.[迭代，链接，断开。](https://leetcode-cn.com/problems/merge-two-sorted-lists/solution/he-bing-liang-ge-you-xu-lian-biao-by-leetcode/) |
 | 23   | [合并K个排序链表](https://leetcode-cn.com/problems/merge-k-sorted-lists/) | python                                                       | 1.[**分治算法**，巧妙在按序两两分治，而不是左右分治](https://leetcode-cn.com/problems/merge-k-sorted-lists/)<br />2. |
 | 30   | [串联所有单词的子串](https://leetcode-cn.com/problems/substring-with-concatenation-of-all-words/) | python                                                       | 1.借用哈希表<br />2.                                         |
 | 44   | [通配符匹配](https://leetcode-cn.com/problems/wildcard-matching/) | python                                                       | 1.**动态规划**，dp[i]/[j]表示s前i个字符与p前j个字符是否匹配，特殊情况作为初始化状态<br />2. |
 | 53   | [最大子序和](https://leetcode-cn.com/problems/maximum-subarray/) | python                                                       | 1.**动态规划**，dp[i]为以nums[i]为结尾的最大和<br />2.       |
 | 94   | [二叉树的中序遍历](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/) | python                                                       | 1.**递归**，左根右<br />2.                                   |
 | 122  | [买卖股票的最佳时机 II](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/) | python                                                       | 1.**贪心算法**，转化为今天昨天最大收益<br />2.               |
-| 912  | [排序数组](https://leetcode-cn.com/problems/sort-an-array/)  | python                                                       | 1.[归并排序，**分治算法**，子问题构建新的列表来存储结果](https://mp.weixin.qq.com/s?__biz=MzUyNjQxNjYyMg==&mid=2247487045&idx=3&sn=e9f67f1fd33649c60478638c1d6cc2d9&key=86fce317de144aa641d25984adf4d5110a34d6995235ffcd431ddcfaf6b4aeb9037f4e236e4800d46e2c4f7a2c7cc05106593c207c59bf62ae295620cd7c3f3635d80d5092a9deb76305b5e1c7c7d728&ascene=1&uin=MzExOTA3MDE3Mw%3D%3D&devicetype=Windows+10&version=6208006f&lang=zh_CN&exportkey=A6HD67v3cF6uVv%2FgPHwimb0%3D&pass_ticket=nFXyKfVYsTU8JaGrP7IGX7STLom7%2F0YSXb6zJufgedmrCxEsPkmUcfANYDBwOUO8)<br />2. |
+| 912  | [排序数组](https://leetcode-cn.com/problems/sort-an-array/)  | python                                                       | 1.[归并排序，**分治算法**，子问题构建新的列表来存储结果](https://mp.weixin.qq.com/s?__biz=MzUyNjQxNjYyMg==&mid=2247487045&idx=3&sn=e9f67f1fd33649c60478638c1d6cc2d9&key=86fce317de144aa641d25984adf4d5110a34d6995235ffcd431ddcfaf6b4aeb9037f4e236e4800d46e2c4f7a2c7cc05106593c207c59bf62ae295620cd7c3f3635d80d5092a9deb76305b5e1c7c7d728&ascene=1&uin=MzExOTA3MDE3Mw%3D%3D&devicetype=Windows+10&version=6208006f&lang=zh_CN&exportkey=A6HD67v3cF6uVv%2FgPHwimb0%3D&pass_ticket=nFXyKfVYsTU8JaGrP7IGX7STLom7%2F0YSXb6zJufgedmrCxEsPkmUcfANYDBwOUO8)<br />2.[**冒泡排序**，超时](https://www.youtube.com/watch?v=nmhjrI-aW5o)<br />3.[**快排**，找到中间数（pivot的左边都小于等于pivot的右边和pivot），左右分治](https://www.youtube.com/watch?v=COk73cpQbFQ)<br /> |
 
 ## 动态规划
 
@@ -51,6 +52,7 @@
 | ---- | ------------------------------------------------------------ | ------------------------- |
 | 2    | [Add Two Numbers](https://leetcode-cn.com/problems/add-two-numbers/) | 链表                      |
 | 19   | [删除链表的倒数第N个节点](https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/) | 链表                      |
+| 20   | [有效的括号](https://leetcode-cn.com/problems/valid-parentheses/) | 栈                        |
 | 21   | [合并两个有序链表](https://leetcode-cn.com/problems/merge-two-sorted-lists/) | 链表                      |
 | 23   | [合并K个排序链表](https://leetcode-cn.com/problems/merge-k-sorted-lists/) | 链表                      |
 | 30   | [串联所有单词的子串](https://leetcode-cn.com/problems/substring-with-concatenation-of-all-words/) | 哈希表                    |
@@ -80,13 +82,13 @@
 
 
 
-## 排序
+## [十大经典排序](https://github.com/hustcc/JS-Sorting-Algorithm)
 
-| #    | 题目                                                        | 备注              |
-| ---- | ----------------------------------------------------------- | ----------------- |
-| 912  | [排序数组](https://leetcode-cn.com/problems/sort-an-array/) | method_1:归并排序 |
-|      |                                                             |                   |
-|      |                                                             |                   |
+| #    | 题目                                                        | 备注                |
+| ---- | ----------------------------------------------------------- | ------------------- |
+| 912  | [排序数组](https://leetcode-cn.com/problems/sort-an-array/) | method_1:归并排序   |
+| 912  | [排序数组](https://leetcode-cn.com/problems/sort-an-array/) | method_2:冒泡：超时 |
+| 912  | [排序数组](https://leetcode-cn.com/problems/sort-an-array/) | method_3:快排       |
 
 ## 递归
 

@@ -26,3 +26,51 @@ class Solution:
             return result + right[j:]
         else:
             return result + left[i:]
+
+# # method_2
+# #   冒泡：超时
+# class Solution:
+#     def sortArray(self, nums: List[int]) -> List[int]:
+#         n = len(nums)
+#         i = 0
+#         j = n-1
+#         for j in range(n-1,-1,-1):
+#             for i in range(j):
+#                 if nums[i] > nums[i+1]:
+#                     t = nums[i]
+#                     nums[i] = nums[i+1]
+#                     nums[i+1] = t
+#         return nums
+
+# # method_3
+# #   快排
+# class Solution:
+#     def sortArray(self, nums):
+#         self.nums = nums
+#         self.quicksort(0,len(nums)-1)
+#         return self.nums
+
+    
+#     def quicksort(self,start,end):
+#         if start < end:
+#             pivot = self.partition(start,end)
+#             self.quicksort(start,pivot-1)
+#             self.quicksort(pivot+1,end)
+
+
+    
+#     def partition(self,start,end): 
+#         i = start -1
+#         for j in range(start,end):
+#             if self.nums[j] <= self.nums[end]:
+#                 i += 1
+#                 # swap
+#                 tmp = self.nums[j]
+#                 self.nums[j] = self.nums[i]
+#                 self.nums[i] = tmp
+#         i = i+1
+#         # swap
+#         tmp = self.nums[i]
+#         self.nums[i] = self.nums[end]
+#         self.nums[end] = tmp
+#         return i 

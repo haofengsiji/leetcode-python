@@ -6,19 +6,10 @@ class Solution:
             if c in ['[','(','{']:
                 stack.append(c)
             else:
-                if stack and stack.pop() == dic[c]
+                # 非空，有的匹配
+                if stack and stack.pop() == dic[c]:
                     continue
                 else:
                     return False
-        
-        return True
-            
-
-
-        
-                    
-
-if __name__ == "__main__":
-    s = Solution()
-
-    print(s.isValid('()'))
+        # stack 必须是空，才说明匹配完全
+        return True and not stack
