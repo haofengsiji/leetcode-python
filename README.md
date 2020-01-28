@@ -33,6 +33,7 @@
 | 25   | [K 个一组翻转链表](https://leetcode-cn.com/problems/reverse-nodes-in-k-group/) | 1.[迭代](https://leetcode-cn.com/problems/reverse-nodes-in-k-group/solution/die-dai-by-haofengsiji/)，额外头节点，普适化，构建k个交换指针加上一个前驱节点<br />2.[递归](https://leetcode-cn.com/problems/reverse-nodes-in-k-group/submissions/)，先处理前k个，后面的递。 |
 | 26   | [删除排序数组中的重复项](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/) | 1.单**指针**，加pop<br />2.[**双指针**](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/solution/shuang-zhi-zhen-shan-chu-zhong-fu-xiang-dai-you-hu/)，运用原数组的空间，很巧妙 |
 | 27   | [移除元素](https://leetcode-cn.com/problems/remove-element/) | 1.双指针，将等于val的放后面                                  |
+| 28   | [实现 strStr()](https://leetcode-cn.com/problems/implement-strstr/) | 1.没啥可说的<br />2.笔试用find                               |
 | 30   | [串联所有单词的子串](https://leetcode-cn.com/problems/substring-with-concatenation-of-all-words/) | 1.借用哈希表<br />2.                                         |
 | 44   | [通配符匹配](https://leetcode-cn.com/problems/wildcard-matching/) | 1.**动态规划**，dp[i]/[j]表示s前i个字符与p前j个字符是否匹配，特殊情况作为初始化状态<br />2. |
 | 53   | [最大子序和](https://leetcode-cn.com/problems/maximum-subarray/) | 1.**动态规划**，dp[i]为以nums[i]为结尾的最大和<br />2.       |
