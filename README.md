@@ -36,6 +36,7 @@
 | 28   | [实现 strStr()](https://leetcode-cn.com/problems/implement-strstr/) | 1.没啥可说的<br />2.笔试用find                               |
 | 29   | [两数相除](https://leetcode-cn.com/problems/divide-two-integers/) | 1.[位操作](https://leetcode-cn.com/problems/divide-two-integers/solution/xiang-xi-tong-su-de-si-lu-fen-xi-duo-jie-fa-by-2-4/)，除法转为减法（a/b，a中有多少个b），正数转为负数（取反加一），负数累加，避免溢出。 |
 | 30   | [串联所有单词的子串](https://leetcode-cn.com/problems/substring-with-concatenation-of-all-words/) | 1.借用哈希表<br />2.[滑动窗口](https://leetcode-cn.com/problems/substring-with-concatenation-of-all-words/solution/chuan-lian-suo-you-dan-ci-de-zi-chuan-by-powcai/)，每次划出，或划入一个单词，记录Counter,方便优化。 |
+| 31   | [下一个排列](https://leetcode-cn.com/problems/next-permutation/) | 1.[逻辑思路](https://leetcode-cn.com/problems/next-permutation/solution/) |
 | 44   | [通配符匹配](https://leetcode-cn.com/problems/wildcard-matching/) | 1.**动态规划**，dp[i]/[j]表示s前i个字符与p前j个字符是否匹配，特殊情况作为初始化状态<br />2. |
 | 53   | [最大子序和](https://leetcode-cn.com/problems/maximum-subarray/) | 1.**动态规划**，dp[i]为以nums[i]为结尾的最大和<br />2.       |
 | 94   | [二叉树的中序遍历](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/) | 1.**递归**，中序，左根右<br />2.                             |
