@@ -145,9 +145,9 @@
 
 ## 高频
 
-| #    | 题目                                                         | 备注                              |
-| ---- | ------------------------------------------------------------ | --------------------------------- |
-| 94   | [二叉树的中序遍历](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/) | 1.递归基础 2.迭代                 |
-| 5    | [最长回文子串](https://leetcode-cn.com/problems/longest-palindromic-substring/) | 2.动态规划基础 3.中心扩展优化空间 |
-|      |                                                              |                                   |
+| #    | 题目                                                         | 备注                                                         |
+| ---- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| 94   | [二叉树的中序遍历](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/) | 1.递归基础 2.迭代                                            |
+| 5    | [最长回文子串](https://leetcode-cn.com/problems/longest-palindromic-substring/) | 2.动态规划基础 3.中心扩展优化空间                            |
+| 1143 | [最长公共子序列](https://leetcode-cn.com/problems/longest-common-subsequence/) | 1.[动态规划](https://leetcode-cn.com/problems/longest-common-subsequence/solution/chao-xiang-xi-dong-tai-gui-hua-jie-fa-by-shi-wei-h/) |
 

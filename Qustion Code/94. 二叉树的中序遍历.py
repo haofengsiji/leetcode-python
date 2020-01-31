@@ -20,3 +20,5 @@ class Solution:
             if root.right != None:
                 self.helper(root.right,res)
         return res
+
+# method_2
