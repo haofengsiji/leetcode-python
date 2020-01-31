@@ -37,10 +37,10 @@
 | 29   | [两数相除](https://leetcode-cn.com/problems/divide-two-integers/) | 1.[位操作](https://leetcode-cn.com/problems/divide-two-integers/solution/xiang-xi-tong-su-de-si-lu-fen-xi-duo-jie-fa-by-2-4/)，除法转为减法（a/b，a中有多少个b），正数转为负数（取反加一），负数累加，避免溢出。 |
 | 30   | [串联所有单词的子串](https://leetcode-cn.com/problems/substring-with-concatenation-of-all-words/) | 1.借用哈希表<br />2.[滑动窗口](https://leetcode-cn.com/problems/substring-with-concatenation-of-all-words/solution/chuan-lian-suo-you-dan-ci-de-zi-chuan-by-powcai/)，每次划出，或划入一个单词，记录Counter,方便优化。 |
 | 31   | [下一个排列](https://leetcode-cn.com/problems/next-permutation/) | 1.[逻辑思路](https://leetcode-cn.com/problems/next-permutation/solution/) |
-| 32   | [最长有效括号](https://leetcode-cn.com/problems/longest-valid-parentheses/) | 1.用栈匹配括号，存下括号索引，对索引进行排序，计算最长连续的索引<br />2.暴力法，遍历所有偶数子字符串，判断是否是有效括号，超时。<br />3.**[动态规划](https://leetcode-cn.com/problems/longest-valid-parentheses/solution/zhan-wei-shi-yao-tou-jie-dian-she-wei-1-by-haofeng/)**，巧妙在转移方程的设置<br />  1."dp[i-2]+()"<br />  2."dp[i-1-dp[i-1]-1]+(+dp[i-1]+)"<br />4.[**栈**]()，巧妙在初始栈顶设为-1，为了当前有效括号和之前地有效括号。最快。 |
+| 32   | [最长有效括号](https://leetcode-cn.com/problems/longest-valid-parentheses/) | 1.用栈匹配括号，存下括号索引，对索引进行排序，计算最长连续的索引<br />2.暴力法，遍历所有偶数子字符串，判断是否是有效括号，超时。<br />3.**[动态规划](https://leetcode-cn.com/problems/longest-valid-parentheses/solution/zhan-wei-shi-yao-tou-jie-dian-she-wei-1-by-haofeng/)**，巧妙在转移方程的设置<br />  1."dp[i-2]+()"<br />  2."dp[i-1-dp[i-1]-1]+(+dp[i-1]+)"<br />4.[**栈**]()，巧妙在初始栈顶设为-1，为了当前有效括号和之前有效括号连接上。最快。 |
 | 44   | [通配符匹配](https://leetcode-cn.com/problems/wildcard-matching/) | 1.**动态规划**，dp[i]/[j]表示s前i个字符与p前j个字符是否匹配，特殊情况作为初始化状态<br />2. |
 | 53   | [最大子序和](https://leetcode-cn.com/problems/maximum-subarray/) | 1.**动态规划**，dp[i]为以nums[i]为结尾的最大和<br />2.       |
-| 94   | [二叉树的中序遍历](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/) | 1.**递归**，中序，左根右<br />2.                             |
+| 94   | [二叉树的中序遍历](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/) | 1.[**递归**](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/solution/er-cha-shu-de-zhong-xu-bian-li-by-leetcode/)，中序，左根右<br />2.[**迭代**](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/solution/er-cha-shu-de-zhong-xu-bian-li-by-leetcode/)，借助栈存储之前的节点。 |
 | 122  | [买卖股票的最佳时机 II](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/) | 1.**贪心算法**，转化为今天昨天最大收益<br />2.               |
 | 912  | [排序数组](https://leetcode-cn.com/problems/sort-an-array/)  | 1.[归并排序，**分治算法**，子问题构建新的列表来存储结果](https://mp.weixin.qq.com/s?__biz=MzUyNjQxNjYyMg==&mid=2247487045&idx=3&sn=e9f67f1fd33649c60478638c1d6cc2d9&key=86fce317de144aa641d25984adf4d5110a34d6995235ffcd431ddcfaf6b4aeb9037f4e236e4800d46e2c4f7a2c7cc05106593c207c59bf62ae295620cd7c3f3635d80d5092a9deb76305b5e1c7c7d728&ascene=1&uin=MzExOTA3MDE3Mw%3D%3D&devicetype=Windows+10&version=6208006f&lang=zh_CN&exportkey=A6HD67v3cF6uVv%2FgPHwimb0%3D&pass_ticket=nFXyKfVYsTU8JaGrP7IGX7STLom7%2F0YSXb6zJufgedmrCxEsPkmUcfANYDBwOUO8)<br />2.[**冒泡排序**，超时](https://www.youtube.com/watch?v=nmhjrI-aW5o)<br />3.[**快排**，找到中间数（pivot的左边都小于等于pivot的右边和pivot），左右分治](https://www.youtube.com/watch?v=COk73cpQbFQ)<br /> |
 
@@ -140,4 +140,14 @@
 | 5319 | [删除回文子序列](https://leetcode-cn.com/problems/remove-palindromic-subsequences/) | [leetcode-week173](https://haofengsiji.github.io/2020/01/26/leetcode-week173/) |
 | 5320 | [餐厅过滤器](https://leetcode-cn.com/problems/filter-restaurants-by-vegan-friendly-price-and-distance/) | [leetcode-week173](https://haofengsiji.github.io/2020/01/26/leetcode-week173/) |
 |      |                                                              |                                                              |
+
+
+
+## 高频
+
+| #    | 题目                                                         | 备注                              |
+| ---- | ------------------------------------------------------------ | --------------------------------- |
+| 94   | [二叉树的中序遍历](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/) | 1.递归基础 2.迭代                 |
+| 5    | [最长回文子串](https://leetcode-cn.com/problems/longest-palindromic-substring/) | 2.动态规划基础 3.中心扩展优化空间 |
+|      |                                                              |                                   |
 
