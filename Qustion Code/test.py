@@ -1,19 +1,21 @@
 class Solution:
-    def longestCommonSubsequence(self, text1: str, text2: str) -> int:
-        n1 = len(text1)
-        n2 = len(text2)
-        # 状态初始化
-        dp = [[0 for _ in range(n2+1)] for _ in range(n1+1)]
-        # 状态转移
-        for i in range(1,n1+1):
-            for j in range(1,n2+1):
-                if text1[i-1] == text2[j-1]:
-                    dp[i][j] = max(dp[i-1][j],dp[i][j-1])+1
-                else:
-                    dp[i][j] = max(dp[i-1][j],dp[i][j-1])
+    def calculateMinimumHP(self, dungeon) -> int:
+        rows = len(dungeon)
+        cols = len(dungeon[0])
+        dp = [[0 for _ in range(cols)] for _ in range(rows)]
+        dp[-1][-1] = max(1,-dungeon[-1][-1])
+        for i in range(rows-2,-1,-1):
+            dp[i][-1] = max(1,min(dp[i+1][-1],dp[i+1][-1]-dungeon[i][-1]))
+        for j in range(cols-2,-1,-1):
+            dp[-1][j] = max(1,min(dp[-1][j+1],dp[-1][j+1]-dungeon[-1][j]))
+            
+        for i in range(rows-2,-1,-1):
+            for j in range(cols-2,-1,-1):
+                dp[i][j] = max(1,min(min(dp[i+1][j],dp[i][j+1]),min(dp[i+1][j],dp[i][j+1])-dungeon[i][j]))
+               
         return dp
 
 if __name__ == "__main__":
     s = Solution()
-    print(s.longestCommonSubsequence("bsbininm","jmjkbkjkv"))
+    print(s.calculateMinimumHP([[-2,-3,3],[-5,-10,1],[10,30,-5]]))
 

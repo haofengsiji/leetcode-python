@@ -46,13 +46,14 @@
 
 ## 动态规划
 
-| #    | Title                                                        | Remark   |
-| ---- | ------------------------------------------------------------ | -------- |
-| 5    | [Longest Palindromic Substring](https://leetcode-cn.com/problems/longest-palindromic-substring/) | method_2 |
-| 10   | [Regular Expression Matching](https://leetcode-cn.com/problems/regular-expression-matching/) | method_3 |
-| 22   | [括号生成](https://leetcode-cn.com/problems/generate-parentheses/) | method_2 |
-| 44   | [通配符匹配](https://leetcode-cn.com/problems/wildcard-matching/) | method_1 |
-| 53   | [最大子序和](https://leetcode-cn.com/problems/maximum-subarray/) | method_1 |
+| #    | Title                                                        | Remark                                                       |
+| ---- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| 5    | [Longest Palindromic Substring](https://leetcode-cn.com/problems/longest-palindromic-substring/) | method_2                                                     |
+| 10   | [Regular Expression Matching](https://leetcode-cn.com/problems/regular-expression-matching/) | method_3                                                     |
+| 22   | [括号生成](https://leetcode-cn.com/problems/generate-parentheses/) | method_2                                                     |
+| 44   | [通配符匹配](https://leetcode-cn.com/problems/wildcard-matching/) | method_1                                                     |
+| 53   | [最大子序和](https://leetcode-cn.com/problems/maximum-subarray/) | method_1                                                     |
+| 174  | [地下城游戏](https://leetcode-cn.com/problems/dungeon-game/) | [动态规划](https://leetcode-cn.com/problems/dungeon-game/solution/dong-tai-gui-hua-by-powcai-8/)，从左下到右上，后方的加血累计不会影响前方扣血 |
 
 
 
@@ -147,7 +148,8 @@
 
 | #    | 题目                                                         | 备注                                                         |
 | ---- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| 94   | [二叉树的中序遍历](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/) | 1.递归基础 2.迭代                                            |
 | 5    | [最长回文子串](https://leetcode-cn.com/problems/longest-palindromic-substring/) | 2.动态规划基础 3.中心扩展优化空间                            |
+| 74   | [编辑距离](https://leetcode-cn.com/problems/edit-distance/)  | 1.[动态规划](https://leetcode-cn.com/problems/edit-distance/solution/bian-ji-ju-chi-by-leetcode/) |
+| 94   | [二叉树的中序遍历](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/) | 1.递归基础 2.迭代                                            |
 | 1143 | [最长公共子序列](https://leetcode-cn.com/problems/longest-common-subsequence/) | 1.[动态规划](https://leetcode-cn.com/problems/longest-common-subsequence/solution/chao-xiang-xi-dong-tai-gui-hua-jie-fa-by-shi-wei-h/) |
 
