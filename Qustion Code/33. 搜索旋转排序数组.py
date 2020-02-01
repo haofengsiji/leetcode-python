@@ -1,5 +1,5 @@
 class Solution:
-    def search(self, nums, target: int) -> int:
+    def search(self, nums: List[int], target: int) -> int:
         low = 0
         high = len(nums)-1
         if not nums: return -1
@@ -20,8 +20,3 @@ class Solution:
         if nums[low] == target: return low
         if nums[high] == target: return high
         return -1
-
-if __name__ == "__main__":
-    s = Solution()
-    print(s.search([5,1,3],3))
-
