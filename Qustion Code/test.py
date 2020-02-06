@@ -1,27 +1,37 @@
 class Solution:
-    def search(self, nums, target: int) -> int:
+    def searchRange(self, nums, target: int):
+        return [self.left_bound(nums,target),self.right_bound(nums,target)]
+
+
+    def left_bound(self, nums,target):
+        high = len(nums)
         low = 0
-        high = len(nums)-1
-        if not nums: return -1
-        while low < high-1:
-            mid = (low+high)//2
-            # 左边无旋转
-            if nums[low] < nums[mid]:
-                if target <= nums[mid] and target >= nums[low]:
-                    high = mid
-                else:
-                    low = mid
-            # 右边无旋转
-            else:
-                if target <= nums[high] and target >= nums[mid]:
-                    low = mid
-                else:
-                    high = mid
-        if nums[low] == target: return low
-        if nums[high] == target: return high
-        return -1
+        # 中止条件[low,low)
+        while low < high:
+            mid = (low + high)//2
+            if nums[mid] == target:
+               high = mid
+            elif nums[mid] > target:
+                high = mid - 1
+            elif nums[mid] < target:
+                low = mid + 1
+        return high if nums[high] == target else -1
+
+    def right_bound(self, nums,target):
+        high = len(nums)
+        low = 0
+        # 中止条件[low,low)
+        while low < high:
+            mid = (low + high)//2
+            if nums[mid] == target:
+                low = mid
+            elif nums[mid] > target:
+                high = mid - 1
+            elif nums[mid] < target:
+                low = mid + 1
+        return low if nums[low] == target else -1 
 
 if __name__ == "__main__":
     s = Solution()
-    print(s.search([5,1,3],3))
+    print(s.searchRange([5,7,7,8,8],8))
 
