@@ -1,37 +1,16 @@
 class Solution:
-    def searchRange(self, nums, target: int):
-        return [self.left_bound(nums,target),self.right_bound(nums,target)]
+    def test(self, nums):
+        nums.sort(key=lambda x: (x[1],x[0]))
+        ans = [nums[0]]
+        for i in range(1,len(nums)):
+            if ans[-1][-1] < nums[i][0]:
+                ans.append(nums[i])
+        return ans
 
 
-    def left_bound(self, nums,target):
-        high = len(nums)
-        low = 0
-        # 中止条件[low,low)
-        while low < high:
-            mid = (low + high)//2
-            if nums[mid] == target:
-               high = mid
-            elif nums[mid] > target:
-                high = mid - 1
-            elif nums[mid] < target:
-                low = mid + 1
-        return high if nums[high] == target else -1
-
-    def right_bound(self, nums,target):
-        high = len(nums)
-        low = 0
-        # 中止条件[low,low)
-        while low < high:
-            mid = (low + high)//2
-            if nums[mid] == target:
-                low = mid
-            elif nums[mid] > target:
-                high = mid - 1
-            elif nums[mid] < target:
-                low = mid + 1
-        return low if nums[low] == target else -1 
+ 
 
 if __name__ == "__main__":
     s = Solution()
-    print(s.searchRange([5,7,7,8,8],8))
+    print(s.test([[1,2],[3,4],[2,3]]))
 
