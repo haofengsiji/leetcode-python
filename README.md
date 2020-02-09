@@ -60,6 +60,7 @@
 | 44   | [通配符匹配](https://leetcode-cn.com/problems/wildcard-matching/) | method_1                                                     |
 | 53   | [最大子序和](https://leetcode-cn.com/problems/maximum-subarray/) | method_1                                                     |
 | 62   | [不同路径](https://leetcode-cn.com/problems/unique-paths/)   | 1.[数学](https://leetcode-cn.com/problems/unique-paths/solution/xiang-xi-tong-su-de-si-lu-fen-xi-duo-jie-fa-by-20/)，总共要走m+n-2步，其中向右m-1，向左n-1，所以有$C_{m+n-2}^{m-1}$种可能<br />2.[动态规划](https://leetcode-cn.com/problems/unique-paths/solution/62-bu-tong-lu-jing-by-alexer-660/)，写出从小矩阵到大矩阵，有规律，左加上。<br />3.[动态规划](https://leetcode-cn.com/problems/unique-paths/solution/dong-tai-gui-hua-kong-jian-fu-za-du-you-hua-on-pyt/)，优化，利用线程图写出，空间优化为$O(n)$ |
+| 63   | [不同路径 II](https://leetcode-cn.com/problems/unique-paths-ii/) | 1.动态规划，障碍当前为0可能，注意边界，其他不变<br />2.[动态规划](https://leetcode-cn.com/problems/unique-paths-ii/solution/bu-tong-lu-jing-ii-by-leetcode/)，优化，利用障碍数组作为动态规划数组 |
 | 174  | [地下城游戏](https://leetcode-cn.com/problems/dungeon-game/) | [动态规划](https://leetcode-cn.com/problems/dungeon-game/solution/dong-tai-gui-hua-by-powcai-8/)，从左下到右上，后方的加血累计不会影响前方扣血 |
 
 
