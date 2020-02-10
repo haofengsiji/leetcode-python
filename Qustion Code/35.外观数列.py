@@ -1,5 +1,6 @@
+# method_1
 class Solution:
-    def test(self, n):
+    def countAndSay(self, n: int) -> str:
         ans = '1'
         for c in range(1,n):
             temp = ''
@@ -15,11 +16,3 @@ class Solution:
             temp += str(j-i) + ans[i]
             ans = temp
         return ans
-
-
- 
-
-if __name__ == "__main__":
-    s = Solution()
-    print(s.test(5))
-
