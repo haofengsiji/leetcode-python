@@ -43,6 +43,7 @@
 | 35   | [搜索插入位置](https://leetcode-cn.com/problems/search-insert-position/) | 1.遍历<br />2.[二分查找](https://leetcode-cn.com/problems/search-insert-position/solution/1biao-zhun-er-fen-2bian-li-by-haofengsiji/) |
 | 36   | [有效的数独](https://leetcode-cn.com/problems/valid-sudoku/) | 1.[哈希表](https://leetcode-cn.com/problems/valid-sudoku/solution/ha-xi-biao-cha-zhao-python-by-haofengsiji/)，构建3个表，行字典，列字典，方形字典，1-9不能存在重复，用in来判断字典里的列表是否重复，字典(列表)<br />2.哈希表，列表(字典)，判断对应key(1-9)的value(计数)是否大于1。 |
 | 38   | [外观数列](https://leetcode-cn.com/problems/count-and-say/)  | 1.直推，借助指2针记录重复和当前<br />2.                      |
+| 41   | [缺失的第一个正数](https://leetcode-cn.com/problems/first-missing-positive/) | 1. 官解，保证有1；保证都在1~n内，不是的标1；标记索引的值为负号，代表出现了(索引+1)的正数; 如果全为负数，返回n+1; |
 | 44   | [通配符匹配](https://leetcode-cn.com/problems/wildcard-matching/) | 1.**动态规划**，dp[i]/[j]表示s前i个字符与p前j个字符是否匹配，特殊情况作为初始化状态<br />2. |
 | 53   | [最大子序和](https://leetcode-cn.com/problems/maximum-subarray/) | 1.**动态规划**，dp[i]为以nums[i]为结尾的最大和<br />2.       |
 | 84   | [柱状图中最大的矩形](https://leetcode-cn.com/problems/largest-rectangle-in-histogram/) | 1.[栈](https://leetcode-cn.com/problems/largest-rectangle-in-histogram/solution/zhu-zhuang-tu-zhong-zui-da-de-ju-xing-by-leetcode/)，用栈来记录转折点，辅助计算最大面积。<br />2. |
@@ -132,7 +133,8 @@
 | #    | 题目                                                         | 备注                                                         |
 | ---- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | 22   | [括号生成](https://leetcode-cn.com/problems/generate-parentheses/) | method_1                                                     |
-| 39   | [组合总和](https://leetcode-cn.com/problems/combination-sum/) | 1.[DFS](https://leetcode-cn.com/problems/combination-sum/solution/hui-su-suan-fa-jian-zhi-python-dai-ma-java-dai-m-2/)，画深度搜索树，剪枝条件，返回条件。 |
+| 39   | [组合总和](https://leetcode-cn.com/problems/combination-sum/) | 1.[DFS](https://leetcode-cn.com/problems/combination-sum/solution/hui-su-suan-fa-jian-zhi-python-dai-ma-java-dai-m-2/)，减法，候选值可重复使用，排序，往下递归，残差等于0返回，小于0剪枝<br />2. |
+| 40   | [组合总和 II](https://leetcode-cn.com/problems/combination-sum-ii/) | 1.[DFS](https://leetcode-cn.com/problems/combination-sum-ii/solution/hui-su-suan-fa-jian-zhi-python-dai-ma-java-dai-m-3/), 减法，候选值只能用一次，排序，往下递归，递归不包含用过的候选人，残差等于0返回，小于0大剪枝，如果cand[i] == cand[i-1] 小剪枝（避免重复）<br />2. |
 |      |                                                              |                                                              |
 
 

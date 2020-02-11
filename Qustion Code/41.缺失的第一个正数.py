@@ -1,5 +1,5 @@
 class Solution:
-    def firstMissingPositive(self, nums) -> int:
+    def firstMissingPositive(self, nums: List[int]) -> int:
         # 保证有1
         if 1 not in nums:
             return 1
@@ -23,11 +23,3 @@ class Solution:
         
         # 全为负
         return n+1
-
-
- 
-
-if __name__ == "__main__":
-    s = Solution()
-    print(s.firstMissingPositive([3,4,-1,1]))
-
