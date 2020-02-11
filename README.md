@@ -117,7 +117,7 @@
 
 
 
-## 递归
+## 递归/回溯
 
 | #    | 题目                                                         | 备注     |
 | ---- | ------------------------------------------------------------ | -------- |
@@ -129,11 +129,11 @@
 
 ## 深度优先搜索
 
-| #    | 题目                                                         | 备注     |
-| ---- | ------------------------------------------------------------ | -------- |
-| 22   | [括号生成](https://leetcode-cn.com/problems/generate-parentheses/) | method_1 |
-|      |                                                              |          |
-|      |                                                              |          |
+| #    | 题目                                                         | 备注                                                         |
+| ---- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| 22   | [括号生成](https://leetcode-cn.com/problems/generate-parentheses/) | method_1                                                     |
+| 39   | [组合总和](https://leetcode-cn.com/problems/combination-sum/) | 1.[DFS](https://leetcode-cn.com/problems/combination-sum/solution/hui-su-suan-fa-jian-zhi-python-dai-ma-java-dai-m-2/)，画深度搜索树，剪枝条件，返回条件。 |
+|      |                                                              |                                                              |
 
 
 
