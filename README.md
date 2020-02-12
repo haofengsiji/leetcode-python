@@ -135,7 +135,7 @@
 | 22   | [括号生成](https://leetcode-cn.com/problems/generate-parentheses/) | method_1                                                     |
 | 39   | [组合总和](https://leetcode-cn.com/problems/combination-sum/) | 1.[DFS](https://leetcode-cn.com/problems/combination-sum/solution/hui-su-suan-fa-jian-zhi-python-dai-ma-java-dai-m-2/)，减法，候选值可重复使用，排序，往下递归，残差等于0返回，小于0剪枝<br />2. |
 | 40   | [组合总和 II](https://leetcode-cn.com/problems/combination-sum-ii/) | 1.[DFS](https://leetcode-cn.com/problems/combination-sum-ii/solution/hui-su-suan-fa-jian-zhi-python-dai-ma-java-dai-m-3/), 减法，候选值只能用一次，排序，往下递归，递归不包含用过的候选人，残差等于0返回，小于0大剪枝，如果cand[i] == cand[i-1] 小剪枝（避免重复）<br />2. |
-|      |                                                              |                                                              |
+| 98   | [验证二叉搜索树](https://leetcode-cn.com/problems/validate-binary-search-tree/) | 1.递归，当节点为空，返回True; 当val 不满足上界下界，返回False；向右向左递归，若得到False,则返回False;<br />2. |
 
 
 
