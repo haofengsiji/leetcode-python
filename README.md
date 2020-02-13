@@ -44,6 +44,7 @@
 | 36   | [有效的数独](https://leetcode-cn.com/problems/valid-sudoku/) | 1.[哈希表](https://leetcode-cn.com/problems/valid-sudoku/solution/ha-xi-biao-cha-zhao-python-by-haofengsiji/)，构建3个表，行字典，列字典，方形字典，1-9不能存在重复，用in来判断字典里的列表是否重复，字典(列表)<br />2.哈希表，列表(字典)，判断对应key(1-9)的value(计数)是否大于1。 |
 | 38   | [外观数列](https://leetcode-cn.com/problems/count-and-say/)  | 1.直推，借助指2针记录重复和当前<br />2.                      |
 | 41   | [缺失的第一个正数](https://leetcode-cn.com/problems/first-missing-positive/) | 1. 官解，保证有1；保证都在1~n内，不是的标1；标记索引的值为负号，代表出现了(索引+1)的正数; 如果全为负数，返回n+1; |
+| 42   | [接雨水](https://leetcode-cn.com/problems/trapping-rain-water/) | [详细通俗的思路分析，多解法](https://leetcode-cn.com/problems/trapping-rain-water/solution/xiang-xi-tong-su-de-si-lu-fen-xi-duo-jie-fa-by-w-8/)<br />1. 按行<br />2.按列，找做左边最高，右边最高，计算当前列可盛水<br />3.动态规划辅助，按列优化，利用空间换时间，先求出左边最高状态和右边最高状态，然后按列求每列可盛水，<br />4.双指针，动态规划的优化，利用每次只用到两个状态，左右开弓<br />5.栈，辅助计算盛水量，如何计算盛水量是难点。 |
 | 44   | [通配符匹配](https://leetcode-cn.com/problems/wildcard-matching/) | 1.**动态规划**，dp[i]/[j]表示s前i个字符与p前j个字符是否匹配，特殊情况作为初始化状态<br />2. |
 | 53   | [最大子序和](https://leetcode-cn.com/problems/maximum-subarray/) | 1.**动态规划**，dp[i]为以nums[i]为结尾的最大和<br />2.       |
 | 84   | [柱状图中最大的矩形](https://leetcode-cn.com/problems/largest-rectangle-in-histogram/) | 1.[栈](https://leetcode-cn.com/problems/largest-rectangle-in-histogram/solution/zhu-zhuang-tu-zhong-zui-da-de-ju-xing-by-leetcode/)，用栈来记录转折点，辅助计算最大面积。<br />2. |
@@ -137,6 +138,7 @@
 | 40   | [组合总和 II](https://leetcode-cn.com/problems/combination-sum-ii/) | 1.[DFS](https://leetcode-cn.com/problems/combination-sum-ii/solution/hui-su-suan-fa-jian-zhi-python-dai-ma-java-dai-m-3/), 减法，候选值只能用一次，排序，往下递归，递归不包含用过的候选人，残差等于0返回，小于0大剪枝，如果cand[i] == cand[i-1] 小剪枝（避免重复）<br />2. |
 | 98   | [验证二叉搜索树](https://leetcode-cn.com/problems/validate-binary-search-tree/) | 1.递归，当节点为空，返回True; 当val 不满足上界下界，返回False；向右向左递归，若得到False,则返回False;<br />2. |
 | 99   | [恢复二叉搜索树](https://leetcode-cn.com/problems/recover-binary-search-tree/) | 1.中序遍历，第一个交换节点是：前节点比后节点大中的前节点。第二个交换节点是： 前街店比后节点大中的后节点。 |
+| 100  | [相同的树](https://leetcode-cn.com/problems/same-tree/)      | 1. [二叉树框架](https://leetcode-cn.com/problems/same-tree/solution/xie-shu-suan-fa-de-tao-lu-kuang-jia-by-wei-lai-bu-/)，root 的操作；剩下交给框架 |
 
 
 
