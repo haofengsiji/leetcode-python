@@ -14,11 +14,3 @@ class Solution:
             i -= 1
             j -= 1 
         return '1' + res if carry != 0 else res
-
-
- 
-
-if __name__ == "__main__":
-    s = Solution()
-    print(s.addStrings('9','99'))
-
