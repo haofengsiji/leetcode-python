@@ -1,24 +1,25 @@
 class Solution:
-    def addStrings(self, num1: str, num2: str) -> str:
-        i = len(num1)-1
-        j = len(num2)-1
-        res = ""
-        carry = 0
-        while i >=0 or j >= 0:
-            n1 = num1[i] if i >= 0 else '0'
-            n2 = num2[j] if j >= 0 else '0'
-            temp = ord(n1) + ord(n2) - 2*ord('0') + carry
-            cur = temp%10 
-            carry = temp//10
-            res = chr(cur+48) + res
-            i -= 1
-            j -= 1 
-        return '1' + res if carry != 0 else res
+    def coinChange(self, coins, amount: int) -> int:
+        self.ans = float('inf')
+        coins.sort(reverse=True)
+        self.dfs(coins,0,amount,0)
+        return self.ans if self.ans != float('inf') else -1
+
+    def dfs(self,coins,c_index,amount,cnt):
+        if c_index == len(coins) or cnt > self.ans:
+            return
+        elif amount == 0:
+            self.ans = min(self.ans,cnt)
+            return
+        k = amount//coins[c_index]
+        while k >= 0:
+            self.dfs(coins,c_index+1,amount-k*coins[c_index],cnt+k)
+            k -= 1
 
 
  
 
 if __name__ == "__main__":
     s = Solution()
-    print(s.addStrings('9','99'))
+    print(s.coinChange([1,2,5],11))
 
