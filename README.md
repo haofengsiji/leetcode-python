@@ -62,6 +62,7 @@
 | 695  | [岛屿的最大面积](https://leetcode-cn.com/problems/max-area-of-island/) | [官解](https://leetcode-cn.com/problems/max-area-of-island/)<br />1.深度优先，递归，每次向四周搜索<br />2.深度优先，借助栈，尾部进来，尾部出append，pop<br />3.广度优先，借助deque, 尾部进来，头不出，popleft(), 如果是pop,就是深度优先了。 |
 | 912  | [排序数组](https://leetcode-cn.com/problems/sort-an-array/)  | 1.[归并排序，**分治算法**，子问题构建新的列表来存储结果](https://mp.weixin.qq.com/s?__biz=MzUyNjQxNjYyMg==&mid=2247487045&idx=3&sn=e9f67f1fd33649c60478638c1d6cc2d9&key=86fce317de144aa641d25984adf4d5110a34d6995235ffcd431ddcfaf6b4aeb9037f4e236e4800d46e2c4f7a2c7cc05106593c207c59bf62ae295620cd7c3f3635d80d5092a9deb76305b5e1c7c7d728&ascene=1&uin=MzExOTA3MDE3Mw%3D%3D&devicetype=Windows+10&version=6208006f&lang=zh_CN&exportkey=A6HD67v3cF6uVv%2FgPHwimb0%3D&pass_ticket=nFXyKfVYsTU8JaGrP7IGX7STLom7%2F0YSXb6zJufgedmrCxEsPkmUcfANYDBwOUO8)<br />2.[**冒泡排序**，超时](https://www.youtube.com/watch?v=nmhjrI-aW5o)<br />3.[**快排**，找到中间数（pivot的左边都小于等于pivot的右边和pivot），左右分治](https://www.youtube.com/watch?v=COk73cpQbFQ)<br /> |
 | 1103 | [分糖果 II](https://leetcode-cn.com/problems/distribute-candies-to-people/) | 1.遍历，按规则一个一个发<br />2.[数学](https://leetcode-cn.com/problems/distribute-candies-to-people/solution/guan-jie-shu-xue-ji-suan-guo-cheng-by-haofengsiji/)，等差数列 |
+| 1160 | [拼写单词](https://leetcode-cn.com/problems/find-words-that-can-be-formed-by-characters/) | 1.构建字典表，查表                                           |
 
 ## 动态规划
 
