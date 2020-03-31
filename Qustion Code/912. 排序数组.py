@@ -74,3 +74,32 @@ class Solution:
 #         self.nums[i] = self.nums[end]
 #         self.nums[end] = tmp
 #         return i 
+
+# # method_3
+# #   快排写法2
+# class Solution:
+#     def sortArray(self, nums):
+#         self.randomized_quicksort(nums, 0, len(nums)-1)
+#         return nums
+
+    
+#     def randomized_quicksort(self,nums,start,end):
+#         if start >= end:
+#             return
+#         pivot = self.randomized_partition(nums,start,end)
+#         self.randomized_quicksort(nums,start,pivot-1)
+#         self.randomized_quicksort(nums,pivot+1,end)
+    
+#     def randomized_partition(self,nums,start,end): 
+#         pivot = random.randint(start,end) # random range [start,end]
+#         nums[pivot],nums[end] = nums[pivot],nums[end]
+#         i = start -1
+#         for j in range(start,end):
+#             if  nums[j] <= nums[end]:
+#                 i += 1
+#                 # swap
+#                 nums[j], nums[i] = nums[i], nums[j]
+#         i = i+1
+#         # swap
+#         nums[i], nums[end] = nums[end], nums[i]
+#         return i

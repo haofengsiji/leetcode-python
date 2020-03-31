@@ -1,18 +1,35 @@
-import collections
+import random
 class Solution:
-    def longestPalindrome(self, s: str) -> int:
-        ans = 0
-        cnt = collections.Counter(s)
-        for key in cnt:
-            ans += cnt[key]//2
-        if ans < len(s):
-            ans = ans+1
-        return ans 
+    def sortArray(self, nums):
+        self.randomized_quicksort(nums, 0, len(nums)-1)
+        return nums
+
+    
+    def randomized_quicksort(self,nums,start,end):
+        if start >= end:
+            return
+        pivot = self.randomized_partition(nums,start,end)
+        self.randomized_quicksort(nums,start,pivot-1)
+        self.randomized_quicksort(nums,pivot+1,end)
+    
+    def randomized_partition(self,nums,start,end): 
+        pivot = random.randint(start,end) # random range [start,end]
+        nums[pivot],nums[end] = nums[pivot],nums[end]
+        i = start -1
+        for j in range(start,end):
+            if  nums[j] <= nums[end]:
+                i += 1
+                # swap
+                nums[j], nums[i] = nums[i], nums[j]
+        i = i+1
+        # swap
+        nums[j], nums[i] = nums[i], nums[j]
+        return i
 
 
  
 
 if __name__ == "__main__":
     s = Solution()
-    print(s.longestPalindrome("abccccdd"))
+    print(s.sortArray([5,2,3,1]))
 
