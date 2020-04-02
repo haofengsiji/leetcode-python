@@ -1,5 +1,6 @@
+# method_1 遍历
 class Solution:
-    def gameOfLife(self, board) -> None:
+    def gameOfLife(self, board: List[List[int]]) -> None:
         """
         Do not return anything, modify board in-place instead.
         """
@@ -43,10 +44,30 @@ class Solution:
                 else:
                     board[row][col] = 0
 
-
- 
-
-if __name__ == "__main__":
-    s = Solution()
-    print(s.gameOfLife([[0,1,0],[0,0,1],[1,1,1],[0,0,0]]))
-
+# method_2 卷积，没啥优势，了解一下卷积的写法
+class Solution:
+    def gameOfLife(self, board: List[List[int]]) -> None:
+        """
+        Do not return anything, modify board in-place instead.
+        """
+        import numpy as np
+        r,c=len(board),len(board[0])
+        padding = 1
+        #下面两行做zero padding
+        board_exp=np.array([[0 for _ in range(c+2*padding)] for _ in range(r+2*padding)])
+        board_exp[padding:padding+r,padding:padding+c]=np.array(board)
+        #设置卷积核
+        kernel=np.array([[1,1,1],[1,0,1],[1,1,1]])
+        #开始卷积
+        for i in range(padding,r+padding):
+            for j in range(padding,c+padding):
+                #统计细胞周围8个位置的状态
+                temp_sum=np.sum(kernel*board_exp[i-1:i+2,j-1:j+2])
+                #按照题目规则进行判断
+                if board_exp[i,j]==1:
+                    if temp_sum<2 or temp_sum>3:
+                        board[i-1][j-1]=0
+                else:
+                    if temp_sum==3:
+                        board[i-1][j-1]=1
+        return None           
