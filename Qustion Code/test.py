@@ -1,52 +1,61 @@
 class Solution:
-    def gameOfLife(self, board) -> None:
-        """
-        Do not return anything, modify board in-place instead.
-        """
-        rows = len(board)
-        cols = len(board[0])
-        neighbors = [(0,1), (0,-1), (1,0), (-1,0), (1,1), (1,-1), (-1,1), (-1,-1)]
-
-        # 遍历细胞
-        for row in range(rows):
-            for col in range(cols):
-                
-                count = 0 
-
-                # 遍历邻居细胞
-                for neighbor in neighbors:
-                    cur_row = row + neighbor[0]
-                    cur_col = col + neighbor[1]
-                    # 1.有效位置 2.有细胞
-                    if cur_row >= 0 and cur_row < rows and cur_col >= 0 and cur_col < cols \
-                    and (board[cur_row][cur_col]  == 1 or board[cur_row][cur_col]  == -1):
-                        count += 1
-                
-                # -1:过去活现在死；2:过去死现在活；0:一直死；1:一直活
-                # 新规则1
-                if board[row][col] == 1 and count < 2:
-                    board[row][col] = -1
-                # 新规则2
-                elif board[row][col] == 1 and count >=2 and count <= 3:
-                    board[row][col] = 1
-                # 新规则3
-                elif board[row][col] == 1 and count >3:
-                    board[row][col] = -1
-                # 新规则4
-                elif board[row][col] == 0 and count == 3:
-                    board[row][col] = 2
-        # 更新细胞板
-        for row in range(rows):
-            for col in range(cols):
-                if board[row][col] > 0:
-                    board[row][col] = 1
+    def addBinary(self, a: str, b: str) -> str:
+        ans = ''
+        if len(a) < len(b):
+            self.addBinary(b,a)
+        i = len(a) - 1
+        j = len(b) - 1
+        carry = 0
+        state = 0
+        while i >= 0 or j >=0:
+            # special case
+            if j < 0:
+                if carry == 1:
+                    if a[i] == '1':
+                        carry = 1
+                        ans = '0' + ans
+                        i -= 1
+                    else:
+                        carry = 0
+                        ans = '1' + ans
+                        i -= 1
                 else:
-                    board[row][col] = 0
+                    ans = a[:i+1] + ans
+                    break
+            else:
+                # accumulation
+                if a[i] == '1':
+                    state += 1
+                if b[j] == '1':
+                    state += 1
+                if carry == 1:
+                    state += 1
+                    carry = 0
+                # calculation
+                if state == 0:
+                    ans = '0' + ans 
+                elif state == 1:
+                    ans = '1' + ans 
+                elif state == 2:
+                    ans = '0' + ans 
+                    carry = 1
+                elif state == 3:
+                    ans = '1' + ans 
+                    carry = 1
+                else:
+                    assert "state error"
+                # update loop state
+                i -= 1
+                j -= 1
+                state = 0     
+        if carry == 1:
+            ans = '1' + ans
+        return ans    
 
 
  
 
 if __name__ == "__main__":
     s = Solution()
-    print(s.gameOfLife([[0,1,0],[0,0,1],[1,1,1],[0,0,0]]))
+    print(s.addBinary("101111","10"))
 

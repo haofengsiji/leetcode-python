@@ -48,6 +48,7 @@
 | 44   | [通配符匹配](https://leetcode-cn.com/problems/wildcard-matching/) | 1.**动态规划**，dp[i]/[j]表示s前i个字符与p前j个字符是否匹配，特殊情况作为初始化状态<br />2. |
 | 53   | [最大子序和](https://leetcode-cn.com/problems/maximum-subarray/) | 1.**动态规划**，dp[i]为以nums[i]为结尾的最大和<br />2.       |
 | 66   | [加一](https://leetcode-cn.com/problems/plus-one/)           | 1.列表转数字，数字转列表<br />2.                             |
+| 67   | [二进制求和](https://leetcode-cn.com/problems/add-binary/)   | 1.内置函数，转10进制求和，转2进制输出<br />2.逐位计算，//求进位，%求当前位<br />3.位操作，&求进位和结果，^求无进位和，然后循环计算进位和结果与无进位和结果，直到进位和为零 |
 | 84   | [柱状图中最大的矩形](https://leetcode-cn.com/problems/largest-rectangle-in-histogram/) | 1.[栈](https://leetcode-cn.com/problems/largest-rectangle-in-histogram/solution/zhu-zhuang-tu-zhong-zui-da-de-ju-xing-by-leetcode/)，用栈来记录转折点，辅助计算最大面积。<br />2. |
 | 94   | [二叉树的中序遍历](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/) | 1.[**递归**](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/solution/er-cha-shu-de-zhong-xu-bian-li-by-leetcode/)，中序，左根右<br />2.[**迭代**](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/solution/er-cha-shu-de-zhong-xu-bian-li-by-leetcode/)，借助栈存储之前的节点。 |
 | 111  | [二叉树的最小深度](https://leetcode-cn.com/problems/minimum-depth-of-binary-tree/) | 1.递归，考虑三种情况，1.左右都非空 2.左非空右空 3.右非空左空<br />2. |
