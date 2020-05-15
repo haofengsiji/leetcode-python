@@ -1,15 +1,22 @@
-from collections import Counter
 class Solution:
-    def singleNumber(self, nums):
-        hashmap = Counter(nums)
-        for key in hashmap:
-            if hashmap[key] == 1:
-                return key
+    def subarraySum(self, nums, k: int) -> int:
+        cnt = 0
+        len_nums = len(nums)
+        nums.sort()
+        for i in range(len_nums):
+            for j in range(i,len_nums):
+                if sum(nums[i:j+1]) == k:
+                    cnt += 1
+                elif sum(nums[i:j+1]) < k:
+                    continue
+                else:
+                    break
+        return cnt
 
 
  
 
 if __name__ == "__main__":
     s = Solution()
-    print(s.singleNumber([4,1,2,1,2]))
+    print(s.subarraySum([1,2,1,2,1],3))
 
