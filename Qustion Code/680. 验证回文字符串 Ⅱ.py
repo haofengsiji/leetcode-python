@@ -1,7 +1,6 @@
-import collections
+# Method_1
 class Solution:
-    def validPalindrome(self, s: str) -> bool:
-
+    def validPalindrome(self, s: str) -> bool
         def checkPalindrome(i,j):
             while i < j:
                 if s[i] == s[j]:
@@ -21,11 +20,3 @@ class Solution:
                 #return checkPalindrome(low+1,high) or checkPalindrome(low,high-1)
                 return s[low+1:high+1] == s[low+1:high+1][::-1] or s[low:high-1+1] == s[low:high-1+1][::-1]
         return True
-
-
- 
-
-if __name__ == "__main__":
-    s = Solution()
-    print(s.validPalindrome('abc'))
-

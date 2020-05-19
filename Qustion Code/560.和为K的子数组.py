@@ -16,7 +16,7 @@ class Solution:
     def subarraySum(self, nums: List[int], k: int) -> int:
         cnt = 0
         mp = {0:1}
-        prefix = 0
+        prefix = 0n
         for num in nums:
             prefix += num
             # search
@@ -24,4 +24,4 @@ class Solution:
                 cnt += mp[prefix - k]
             # update
             mp[prefix] = mp.setdefault(prefix, 0) + 1
-        return cnt
+        return ct
