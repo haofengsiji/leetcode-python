@@ -76,6 +76,7 @@
 | 1103 | [分糖果 II](https://leetcode-cn.com/problems/distribute-candies-to-people/) | 1.遍历，按规则一个一个发<br />2.[数学](https://leetcode-cn.com/problems/distribute-candies-to-people/solution/guan-jie-shu-xue-ji-suan-guo-cheng-by-haofengsiji/)，等差数列 |
 | 1111 | [有效括号的嵌套深度](https://leetcode-cn.com/problems/maximum-nesting-depth-of-two-valid-parentheses-strings/) | [官解](https://leetcode-cn.com/problems/maximum-nesting-depth-of-two-valid-parentheses-strings/solution/you-xiao-gua-hao-de-qian-tao-shen-du-by-leetcode-s/)<br />1.栈，根据嵌套深度平均分<br />2.规律，左右括号有相应的奇偶分配规律 |
 | 1160 | [拼写单词](https://leetcode-cn.com/problems/find-words-that-can-be-formed-by-characters/) | 1.构建字典表，查表                                           |
+| 1371 | [每个元音包含偶数次的最长子字符串](https://leetcode-cn.com/problems/find-the-longest-substring-containing-vowels-in-even-counts/) | 1.[前缀和](https://leetcode-cn.com/problems/find-the-longest-substring-containing-vowels-in-even-counts/solution/python-jian-ji-piao-liang-you-dian-nan-li-jie-ban-/)，位操作（状态压缩） |
 
 ## 动态规划
 

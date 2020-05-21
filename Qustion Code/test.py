@@ -1,31 +1,28 @@
 import collections
 class Solution:
-    def validPalindrome(self, s: str) -> bool:
-
-        def checkPalindrome(i,j):
-            while i < j:
-                if s[i] == s[j]:
-                    i += 1;
-                    j -= 1;
-                else:
-                    return False
-            return True
+    def longestPalindrome(self, s: str) -> str:
+        ans = ''
+        n = len(s)
+        dp = [[None]*n for _ in range(n)]
         
-        low = 0
-        high = len(s)-1
-        while low < high:
-            if s[low] == s[high]:
-                low += 1
-                high -= 1
-            else:
-                #return checkPalindrome(low+1,high) or checkPalindrome(low,high-1)
-                return s[low+1:high+1] == s[low+1:high+1][::-1] or s[low:high-1+1] == s[low:high-1+1][::-1]
-        return True
+        for i in range(n):
+            for j in range(i+1):
+                if s[i] == s[j]:
+                    if i==j+1 or i==j:
+                        dp[i][j] = True
+                    else:
+                        dp[i][j] = dp[i-1][j+1]
+                else:
+                    dp[i][j] = False
+                # update ans
+                if dp[i][j] == True and i-j+1 > len(ans):
+                    ans = s[j:i+1]
+        return ans 
 
 
  
 
 if __name__ == "__main__":
     s = Solution()
-    print(s.validPalindrome('abc'))
+    print(s.longestPalindrome("cbbd"))
 
