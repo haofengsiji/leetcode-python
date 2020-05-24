@@ -2,30 +2,29 @@
 #   归并排序，分治算法
 class Solution:
     def sortArray(self, nums: List[int]) -> List[int]:
-        if len(nums) == 1:
+        if len(nums) <= 1:
             return nums
-        mid = len(nums)//2
         # 分
-        left = self.sortArray(nums[:mid])
-        right = self.sortArray(nums[mid:])
-
-        # 治
-        return self.merge(left,right)
+        mid = len(nums)//2
+        sorted_left = self.sortArray(nums[:mid])
+        sorted_right = self.sortArray(nums[mid:])
+        # 合
+        return self.merge(sorted_left,sorted_right)
 
     def merge(self,left,right):
-        result = []
-        i,j =0,0
-        while i < len(left) and j < len(right):
-            if left[i] < right[j]:
-                result.append(left[i])
-                i +=1
+        res = []
+        while left and right:
+            if left[0] < right[0]:
+                res.append(left[0])
+                left.pop(0)
             else:
-                result.append(right[j])
-                j +=1
-        if i >= len(left): 
-            return result + right[j:]
-        else:
-            return result + left[i:]
+                res.append(right[0])
+                right.pop(0)
+        if not left:
+            res = res + right
+        if not right:
+            res = res + left
+        return res
 
 # # method_2
 # #   冒泡：超时

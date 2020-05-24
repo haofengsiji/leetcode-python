@@ -1,28 +1,34 @@
 import collections
 class Solution:
-    def longestPalindrome(self, s: str) -> str:
-        ans = ''
-        n = len(s)
-        dp = [[None]*n for _ in range(n)]
-        
-        for i in range(n):
-            for j in range(i+1):
-                if s[i] == s[j]:
-                    if i==j+1 or i==j:
-                        dp[i][j] = True
-                    else:
-                        dp[i][j] = dp[i-1][j+1]
-                else:
-                    dp[i][j] = False
-                # update ans
-                if dp[i][j] == True and i-j+1 > len(ans):
-                    ans = s[j:i+1]
-        return ans 
+    def sortArray(self, nums):
+        if len(nums) <= 1:
+            return nums
+        # 分
+        mid = len(nums)//2
+        sorted_left = self.sortArray(nums[:mid])
+        sorted_right = self.sortArray(nums[mid:])
+        # 合
+        return self.merge(sorted_left,sorted_right)
+
+    def merge(self,left,right):
+        res = []
+        while left and right:
+            if left[0] < right[0]:
+                res.append(left[0])
+                left.pop(0)
+            else:
+                res.append(right[0])
+                right.pop(0)
+        if not left:
+            res = res + right
+        if not right:
+            res = res + left
+        return res
 
 
  
 
 if __name__ == "__main__":
     s = Solution()
-    print(s.longestPalindrome("cbbd"))
+    print(s.sortArray([5,2,3,1]))
 
