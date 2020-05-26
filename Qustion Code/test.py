@@ -1,34 +1,25 @@
-import collections
 class Solution:
-    def sortArray(self, nums):
-        if len(nums) <= 1:
-            return nums
-        # 分
-        mid = len(nums)//2
-        sorted_left = self.sortArray(nums[:mid])
-        sorted_right = self.sortArray(nums[mid:])
-        # 合
-        return self.merge(sorted_left,sorted_right)
+    def findDuplicate(self, nums) -> int:
+        right = len(nums)-1
+        left = 1
 
-    def merge(self,left,right):
-        res = []
-        while left and right:
-            if left[0] < right[0]:
-                res.append(left[0])
-                left.pop(0)
+        while left < right:
+            mid = (left + right)//2
+            cnt = 0
+            for num in nums:
+                if num <= mid:
+                    cnt += 1
+            
+            if cnt > mid:
+                right = mid
             else:
-                res.append(right[0])
-                right.pop(0)
-        if not left:
-            res = res + right
-        if not right:
-            res = res + left
-        return res
+                left = mid + 1 
+        return right
 
 
  
 
 if __name__ == "__main__":
     s = Solution()
-    print(s.sortArray([5,2,3,1]))
+    print(s.findDuplicate([1,3,4,5,2,2]))
 
