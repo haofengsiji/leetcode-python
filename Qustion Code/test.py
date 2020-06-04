@@ -1,25 +1,26 @@
 class Solution:
-    def findDuplicate(self, nums) -> int:
-        right = len(nums)-1
-        left = 1
+    def productExceptSelf(self, nums):
+        n = len(nums)
+        L = [nums[0]]*n
+        R = [nums[-1]]*n
+        ans = [0]*n
+        # 计算前缀后缀乘积
+        for i in range(1,n):
+            L[i] = L[i-1]*nums[i]
 
-        while left < right:
-            mid = (left + right)//2
-            cnt = 0
-            for num in nums:
-                if num <= mid:
-                    cnt += 1
-            
-            if cnt > mid:
-                right = mid
-            else:
-                left = mid + 1 
-        return right
+        for i in range(n-2,-1,-1):
+            R[i] = R[i+1]*nums[i]
+        
+        for i in range(1,n-1):
+            ans[i] = L[i-1]*R[i+1]
+        ans[0] = R[1]
+        ans[-1] = L[-2]
+        return ans,L,R
 
 
  
 
 if __name__ == "__main__":
     s = Solution()
-    print(s.findDuplicate([1,3,4,5,2,2]))
+    print(s.productExceptSelf([1,2,3,4]))
 
