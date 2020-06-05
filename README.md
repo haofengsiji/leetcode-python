@@ -47,7 +47,8 @@
 | 42   | [接雨水](https://leetcode-cn.com/problems/trapping-rain-water/) | [详细通俗的思路分析，多解法](https://leetcode-cn.com/problems/trapping-rain-water/solution/xiang-xi-tong-su-de-si-lu-fen-xi-duo-jie-fa-by-w-8/)<br />1. 按行<br />2.按列，找做左边最高，右边最高，计算当前列可盛水<br />3.动态规划辅助，按列优化，利用空间换时间，先求出左边最高状态和右边最高状态，然后按列求每列可盛水，<br />4.双指针，动态规划的优化，利用每次只用到两个状态，左右开弓<br />5.栈，辅助计算盛水量，如何计算盛水量是难点。 |
 | 44   | [通配符匹配](https://leetcode-cn.com/problems/wildcard-matching/) | 1.**动态规划**，dp[i]/[j]表示s前i个字符与p前j个字符是否匹配，特殊情况作为初始化状态<br />2. |
 | 53   | [最大子序和](https://leetcode-cn.com/problems/maximum-subarray/) | 1.**动态规划**，dp[i]为以nums[i]为结尾的最大和<br />2.       |
-| 66   | [加一](https://leetcode-cn.com/problems/plus-one/)           | 1.列表转数字，数字转列表<br />2.                             |
+| 54   | [螺旋矩阵](https://leetcode-cn.com/problems/spiral-matrix/)  | 1.向右-向下-向左-向上，4个边界<br />[2](https://leetcode.com/problems/spiral-matrix/discuss/20571/1-liner-in-Python-%2B-Ruby).每次pop第一行，然后用[\*zip(\*matrix)[::-1]] 旋转矩阵，false and  [operation] 短路操作结束递归 |
+| 66   | 难度中等383收藏分享切换为英文关注反馈[加一](https://leetcode-cn.com/problems/plus-one/) | 1.列表转数字，数字转列表<br />2.                             |
 | 67   | [二进制求和](https://leetcode-cn.com/problems/add-binary/)   | 1.内置函数，转10进制求和，转2进制输出<br />2.逐位计算，//求进位，%求当前位<br />3.位操作，&求进位和结果，^求无进位和，然后循环计算进位和结果与无进位和结果，直到进位和为零 |
 | 84   | [柱状图中最大的矩形](https://leetcode-cn.com/problems/largest-rectangle-in-histogram/) | 1.[栈](https://leetcode-cn.com/problems/largest-rectangle-in-histogram/solution/zhu-zhuang-tu-zhong-zui-da-de-ju-xing-by-leetcode/)，用栈来记录转折点，辅助计算最大面积。<br />2. |
 | 94   | [二叉树的中序遍历](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/) | 1.[**递归**](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/solution/er-cha-shu-de-zhong-xu-bian-li-by-leetcode/)，中序，左根右<br />2.[**迭代**](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/solution/er-cha-shu-de-zhong-xu-bian-li-by-leetcode/)，借助栈存储之前的节点。 |
