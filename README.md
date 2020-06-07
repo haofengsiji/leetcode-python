@@ -56,6 +56,7 @@
 | 111  | [二叉树的最小深度](https://leetcode-cn.com/problems/minimum-depth-of-binary-tree/) | 1.递归，考虑三种情况，1.左右都非空 2.左非空右空 3.右非空左空<br />2. |
 | 121  | [买卖股票的最佳时机](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/) | 1.遍历，比较所有交易<br />2.一次买卖，所以找到历史最低，然后找买入后历史最高 |
 | 122  | [买卖股票的最佳时机 II](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/) | 1.**贪心算法**，转化为今天昨天最大收益<br />2.               |
+| 126  | [[单词接龙 II](https://leetcode-cn.com/problems/word-ladder-ii/)](https://leetcode-cn.com/problems/word-ladder-ii/) | [1](https://leetcode-cn.com/problems/word-ladder-ii/solution/yan-du-you-xian-bian-li-shuang-xiang-yan-du-you--2/). BFS 构建图，得到邻接表，DFS找短路径<br />2. |
 | 128  | [最长连续序列](https://leetcode-cn.com/problems/longest-consecutive-sequence/) | 1.[哈希表](https://leetcode-cn.com/problems/longest-consecutive-sequence/solution/zui-chang-lian-xu-xu-lie-by-leetcode-solution/)，查找 x+1，并根据 x-1 去重 |
 | 136  | [只出现一次的数字](https://leetcode-cn.com/problems/single-number/) | 1.哈希表<br />2.XOR，a$\oplus$a$\oplus$b = 0$\oplus$b = b (数学白学了:sweat_smile:) |
 | 146  | [LRU缓存机制](https://leetcode-cn.com/problems/lru-cache/)   | [官解](https://leetcode-cn.com/problems/lru-cache/solution/lruhuan-cun-ji-zhi-by-leetcode-solution/)<br />1.内建OrderedDict，双链表哈希表数据结构<br />2.自己构建 双链表+哈希结构 |

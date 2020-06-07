@@ -1,7 +1,6 @@
+# method_1
 from collections import deque
 from collections import defaultdict
-from typing import List
-import string
 
 class Solution:
     def findLadders(self, beginWord: str, endWord: str, wordList: List[str]) -> List[List[str]]:
@@ -59,11 +58,11 @@ class Solution:
                     word_list[j] = origin_char
             if found:
                 break
-            # 取两集合全部的元素（并集，等价于将 next_level_visited 里的所有元素添加到 visited 里）
+                        # 取两集合全部的元素（并集，等价于将 next_level_visited 里的所有元素添加到 visited 里）
             visited |= next_level_visited
             next_level_visited.clear()
 
-            return found
+        return found
                 
     def _dfs(self,beginWord, endWord, successors, path, res):
         if beginWord == endWord:
@@ -78,11 +77,3 @@ class Solution:
             path.append(next_word)
             self._dfs(next_word, endWord, successors, path, res)
             path.pop()
-
-
- 
-
-if __name__ == "__main__":
-    s = Solution()
-    print(s.findLadders("hit","cog",["hot","dot","dog","lot","log","cog"]))
-
