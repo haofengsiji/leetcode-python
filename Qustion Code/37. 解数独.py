@@ -1,5 +1,6 @@
+# method_1
 class Solution:
-    def solveSudoku(self, board) -> None:
+    def solveSudoku(self, board: List[List[str]]) -> None:
         """
         Do not return anything, modify board in-place instead.
         """
@@ -22,7 +23,7 @@ class Solution:
                 # 遇到不合法的数字，跳过
                 if not isValid(board,i,j,str(num)):
                     continue
-                # 选择
+                # 做选择
                 board[i][j] = str(num)
                 # 如果找到可行解，返回True
                 if backTrack(board,i,j+1):
@@ -33,29 +34,20 @@ class Solution:
             # 穷举完，依然无可行解，此路不通
             return False
             
-        def isValid(board, i, j, ch):
+        def isValid(board, r, c, ch):
             for k in range(9):
-                # 检查行
-                if board[k][j] == ch:
-                    return False
                 # 检查列
-                if board[i][k] == ch:
+                if board[r][k] == ch:
+                    return False
+                # 检查行
+                if board[k][c] == ch:
                     return False
                 # 检查方阵
-                if board[i//3 + k//3][j//3 + k%3] == ch:
+                if board[(r//3)*3 + k//3][(c//3)*3 + k%3] == ch:
                     return False
             # 三种约束均无冲突
             return True
         
         backTrack(board,0,0)
-
-
-
- 
-
-if __name__ == "__main__":
-    s = Solution()
-    board = [["5","3",".",".","7",".",".",".","."],["6",".",".","1","9","5",".",".","."],[".","9","8",".",".",".",".","6","."],["8",".",".",".","6",".",".",".","3"],["4",".",".","8",".","3",".",".","1"],["7",".",".",".","2",".",".",".","6"],[".","6",".",".",".",".","2","8","."],[".",".",".","4","1","9",".",".","5"],[".",".",".",".","8",".",".","7","9"]]
-    s.solveSudoku(board)
-    print(board)
-
+        
+        
