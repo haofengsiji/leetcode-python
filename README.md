@@ -80,6 +80,7 @@
 | 560  | [和为K的子数组](https://leetcode-cn.com/problems/subarray-sum-equals-k/) | 1.遍历<br />2.前缀和，哈希表查找 prefix - k                  |
 | 646  | [最长数对链](https://leetcode-cn.com/problems/maximum-length-of-pair-chain/) | 1.先排序，后链接                                             |
 | 680  | [验证回文字符串 Ⅱ](https://leetcode-cn.com/problems/valid-palindrome-ii/) | 1. [双指针](https://leetcode-cn.com/problems/valid-palindrome-ii/solution/yan-zheng-hui-wen-zi-fu-chuan-ii-by-leetcode-solut/)，先判断是否回文，如果不是，删除一个后，在给一次机会 |
+| 739  | [每日温度](https://leetcode-cn.com/problems/daily-temperatures/) | 官解<br />1.暴力，反向遍历，字典维护每个温度第一次出现的位置，然后查找<br />2.栈，想出个遍历后，怎么想都想不出怎么优化,​ :pensive: |
 | 695  | [岛屿的最大面积](https://leetcode-cn.com/problems/max-area-of-island/) | [官解](https://leetcode-cn.com/problems/max-area-of-island/)<br />1.深度优先，递归，每次向四周搜索<br />2.深度优先，借助栈，尾部进来，尾部出append，pop<br />3.广度优先，借助deque, 尾部进来，头不出，popleft(), 如果是pop,就是深度优先了。 |
 | 836  | [矩形重叠](https://leetcode-cn.com/problems/rectangle-overlap/) | [官解](https://leetcode-cn.com/problems/rectangle-overlap/solution/ju-xing-zhong-die-by-leetcode-solution/)<br />1.判断不重叠<br />2.投影，然后判断是否有交集`min(rec1[2], rec2[2]) > max(rec1[0], rec2[0])` ,此公式IOU计算很有用 |
 | 837  | [新21点](https://leetcode-cn.com/problems/new-21-game/)      | [官解](https://leetcode-cn.com/problems/new-21-game/solution/xin-21dian-by-leetcode-solution/)<br />1.动态规划，三种情况 [K,min(N,K+W-1)] -> 1, (min(N,K+W-1),K+W] -> 0，[0,K-1] -> dp[x] = 1/W*(dp(x+1) + ... + dp[x+W]), 然后差分优化<br />2. dp[K-1] = min(N - K + 1, W)/W, 刚开始概率为1的数量 |
