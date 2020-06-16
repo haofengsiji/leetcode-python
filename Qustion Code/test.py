@@ -1,13 +1,48 @@
-class Solution:
-    def multiply(self, num1: str, num2: str) -> str:
-        m = len(num1)
-        n = len(num2)
-        res = 0
-        for i in range(n-1,-1,-1):
-            for j in range(m-1,-1,-1):
-                mul = (ord(num1[j]) - ord('0'))*(ord(num2[i]) - ord('0'))*(10**(m+n-2-i-j))
-                res += mul
-        return str(res)
+# Definition for a binary tree node.
+
+class TreeNode(object):
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = None
+
+from collections import deque
+class Codec:
+    def serialize(self, root):
+        """Encodes a tree to a single string.
+        
+        :type root: TreeNode
+        :rtype: str
+        """
+        if root == None: return 'X,'
+        leftserilized = self.serialize(root.left)
+        rightserilized = self.serialize(root.right)
+        return str(root.val) + ',' + leftserilized + rightserilized
+
+        
+
+    def deserialize(self, data):
+        """Decodes your encoded data to tree.
+        
+        :type data: str
+        :rtype: TreeNode
+        """
+        data = data.split(',')
+        root = self.buildTree(data)
+        return root 
+
+    
+    def buildTree(self,data):
+        if not data: return None
+        val = data.pop(0)
+        if val == 'X': return None
+        node = TreeNode(val)
+        node.left = self.buildTree(data)
+        node.right = self.buildTree(data)
+        return node
+
+                    
+
 
 
 
@@ -15,6 +50,6 @@ class Solution:
  
 
 if __name__ == "__main__":
-    s = Solution()
-    print(s.multiply('13','2'))
-
+    s = Codec()
+    root = s.deserialize('1,2,3,X,X,4,5')
+    print(s.serialize(root))
