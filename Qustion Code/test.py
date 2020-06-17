@@ -1,55 +1,27 @@
-# Definition for a binary tree node.
-
-class TreeNode(object):
-    def __init__(self, x):
-        self.val = x
-        self.left = None
-        self.right = None
-
-from collections import deque
-class Codec:
-    def serialize(self, root):
-        """Encodes a tree to a single string.
-        
-        :type root: TreeNode
-        :rtype: str
-        """
-        if root == None: return 'X,'
-        leftserilized = self.serialize(root.left)
-        rightserilized = self.serialize(root.right)
-        return str(root.val) + ',' + leftserilized + rightserilized
-
-        
-
-    def deserialize(self, data):
-        """Decodes your encoded data to tree.
-        
-        :type data: str
-        :rtype: TreeNode
-        """
-        data = data.split(',')
-        root = self.buildTree(data)
-        return root 
-
+from typing import List
+from collections import defaultdict 
+class Solution:
+    def numWays(self, n: int, relation: List[List[int]], k: int) -> int:
+        path = defaultdict(list)
+        for pair in relation:
+            path[pair[1]].append(pair[0])
     
-    def buildTree(self,data):
-        if not data: return None
-        val = data.pop(0)
-        if val == 'X': return None
-        node = TreeNode(val)
-        node.left = self.buildTree(data)
-        node.right = self.buildTree(data)
-        return node
+        def dfs(k,cur):
+            if k == 1:
+                if cur == 0:
+                    return 1
+                else:
+                    return 0
+            else:
+                cnt = 0
+                for i in path[cur]:
+                    cnt += dfs(k-1,i)
+            return cnt
+
+        return dfs(k+1,n-1)
 
                     
 
-
-
-
-
- 
-
 if __name__ == "__main__":
-    s = Codec()
-    root = s.deserialize('1,2,3,X,X,4,5')
-    print(s.serialize(root))
+    s = Solution()
+    print(s.numWays(5,[[0,2],[2,1],[3,4],[2,3],[1,4],[2,0],[0,4]],3))
