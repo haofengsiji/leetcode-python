@@ -1,11 +1,10 @@
-from typing import List
-from collections import defaultdict 
+# method_1
 # Definition for a binary tree node.
-class TreeNode:
-    def __init__(self, x):
-        self.val = x
-        self.left = None
-        self.right = None
+# class TreeNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
 
 class Solution:
     def recoverFromPreorder(self, S: str) -> TreeNode:
@@ -31,13 +30,7 @@ class Solution:
                     path[-1].left = node
             else:
                 path = path[:level]
-                path[-1].right = TreeNode(val)
+                path[-1].right = node
             path.append(node)
 
-        return path[0] 
-
-                    
-
-if __name__ == "__main__":
-    s = Solution()
-    print(s.recoverFromPreorder("1-2--3--4-5--6--7"))
+        return path[0]   
