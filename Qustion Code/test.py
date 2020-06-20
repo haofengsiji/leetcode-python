@@ -1,43 +1,36 @@
 from typing import List
 from collections import defaultdict 
 # Definition for a binary tree node.
-class TreeNode:
-    def __init__(self, x):
-        self.val = x
-        self.left = None
-        self.right = None
-
 class Solution:
-    def recoverFromPreorder(self, S: str) -> TreeNode:
-        path = list()
-        i = 0
-        while i < len(S):
-            # 统计当前level
-            level = 0
-            while S[i] == '-':
-                level += 1
-                i += 1
+    def isMatch(self, s: str, p: str) -> bool:
+        n = len(s)
+        m = len(p)
+        dp = [[False]*(n+1) for _ in range(m+1)]
 
-            # 字符转化
-            val = 0
-            while i < len(S) and S[i].isdigit():
-                val = val*10 + ord(S[i])-ord('0')
-                i += 1
-            
-            # 构建节点
-            node = TreeNode(val)
-            if level == len(path):
-                if path:
-                    path[-1].left = node
+        def Match(i,j):
+            if i == 0:
+                return False
+            elif p[j-1] in [s[i-1],'.']:
+                return True
             else:
-                path = path[:level]
-                path[-1].right = TreeNode(val)
-            path.append(node)
-
-        return path[0] 
+                return False
+                
+        dp[0][0] = True
+        for i in range(n+1):
+            for j in range(1,m+1):
+                if p[j-1] == '*':
+                    dp[i][j] |= dp[i][j-2]
+                    if Match(i,j):
+                        dp[i][j] |= dp[i-1][j]
+                elif Match(i,j):
+                    dp[i][j] |= dp[i-1][j-1]
+        
+        return dp[n][m]
+            
+        
 
                     
 
 if __name__ == "__main__":
     s = Solution()
-    print(s.recoverFromPreorder("1-2--3--4-5--6--7"))
+    print(s.isMatch("aaa","ab*a*c*a"))
