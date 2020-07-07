@@ -57,6 +57,7 @@
 | 101  | [对称二叉树](https://leetcode-cn.com/problems/symmetric-tree/) | [官解](https://leetcode-cn.com/problems/symmetric-tree/solution/dui-cheng-er-cha-shu-by-leetcode-solution/)，左子树是否等于右子树<br />1.递归<br />2.迭代，队列 |
 | 108  | [将有序数组转换为二叉搜索树](https://leetcode-cn.com/problems/convert-sorted-array-to-binary-search-tree/) | 1.[官解](https://leetcode-cn.com/problems/convert-sorted-array-to-binary-search-tree/solution/jiang-you-xu-shu-zu-zhuan-huan-wei-er-cha-sou-s-33/)，二叉树搜索树中序遍历是升序序列 |
 | 111  | [二叉树的最小深度](https://leetcode-cn.com/problems/minimum-depth-of-binary-tree/) | 1.递归，考虑三种情况，1.左右都非空 2.左非空右空 3.右非空左空<br />2. |
+| 112  | [路径总和](https://leetcode-cn.com/problems/path-sum/)       | [官解](https://leetcode-cn.com/problems/path-sum/solution/lu-jing-zong-he-by-leetcode-solution/)<br />1.递归遍历<br />2.广度搜索遍历 |
 | 121  | [买卖股票的最佳时机](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/) | 1.遍历，比较所有交易<br />2.一次买卖，所以找到历史最低，然后找买入后历史最高 |
 | 122  | [买卖股票的最佳时机 II](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/) | 1.**贪心算法**，转化为今天昨天最大收益<br />2.               |
 | 125  | [验证回文串](https://leetcode-cn.com/problems/valid-palindrome/) | [官解](https://leetcode-cn.com/problems/valid-palindrome/solution/yan-zheng-hui-wen-chuan-by-leetcode-solution/)，字符串处理，string.isalnum() = string.isaplha & string.isdigit |
