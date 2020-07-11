@@ -1,10 +1,19 @@
-from typing import List
-from collections import defaultdict 
-
+# method_1
 class Solution:
     def countSmaller(self, nums: List[int]) -> List[int]:
-        a = sorted(nums)
-        c = [0]*(len(nums)+1)
+        n = len(nums)
+        counts = [0]*n
+        for i in range(n):
+            for j in range(i+1,n):
+                if nums[j] < nums[i]:
+                    counts[i] += 1
+        return counts
+
+# method_2
+class Solution:
+    def countSmaller(self, nums: List[int]) -> List[int]:
+        a = nums.copy().sort()
+        c = [0]*len(nums)
         ret = [0]*len(nums)
 
         def LowBit(x:int)->int:
@@ -16,21 +25,20 @@ class Solution:
                 pos += LowBit(pos)
         
         def Query(pos:int)->int:
-            x = 0
+            ret = 0
 
             while pos > 0:
-                x += c[pos]
+                ret += c[pos]
                 pos -= LowBit(pos)
             
-            return x
+            return ret
 
         def lower_bound(n:int, x:int)->int:
             low = 0
             high = n - 1
-            ans = 0
             while low <= high:
                 mid = (low + high)//2
-                if a[mid] <= x:
+                if a[mid] < x:
                     ans = mid
                     low = mid + 1
                 else:
@@ -39,23 +47,18 @@ class Solution:
         
         def Discretization(n:int) -> int:
             m = 0
-            for i in range(1,n):
+            for i in range(n):
                 if a[i] > a[m]:
-                    m += 1
                     a[m] = a[i]
+                    m += 1
             return m + 1
         
         m = Discretization(len(nums))
         for i in range(len(nums)-1,-1,-1):
-            idx = lower_bound(m,nums[i])
-            ret[i] = Query(idx-1+1)
-            Update(m+1,idx+1)
+            idx = lower_bound(m,nums[i]) + 1
+            ret[idx] = Query(idx-1)
+            Update(m,idx)
         
         return ret
-        
 
-                    
-
-if __name__ == "__main__":
-    s = Solution()
-    print(s.countSmaller([5,2,6,1]))
+       
