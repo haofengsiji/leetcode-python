@@ -1,24 +1,20 @@
 # method_1
 class Solution:
     def searchInsert(self, nums: List[int], target: int) -> int:
-        high = len(nums) - 1 
+        n = len(nums)
+
         low = 0
-        ### 优化
-        if target < nums[0]:
-            return 0
-        if target > nums[high]:
-            return high+1
-        ###
+        high = n - 1 
+        ans = n
         while low <= high:
-            mid = (high+low)//2 
-            if nums[mid] == target:
-                return mid
-            elif nums[mid] > target:
-                high = mid -1
-            elif nums[mid] < target:
+            mid = (low + high) // 2
+            if nums[mid] >= target:
+                ans = mid
+                high = mid - 1
+            else:
                 low = mid + 1
-        return low # low 为刚好大于target的位置索引
-        # return high 则返回刚好小于target的位置索引
+            
+        return ans
 
 # method_2
 class Solution:
