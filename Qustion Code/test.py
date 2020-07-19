@@ -14,11 +14,11 @@ class Solution:
                 if i == 0 and j == 0:
                     f[i][j] = True
                 elif i == 0:
-                    f[i][j] = f[i][j-1] & (s1[j-1] == s2[i+j-1])
+                    f[i][j] = f[i][j-1] & (s1[j-1] == s3[i+j-1])
                 elif j == 0:
-                    f[i][j] = f[i-1][j] & (s2[i-1] == s2[i+j-1])
+                    f[i][j] = f[i-1][j] & (s2[i-1] == s3[i+j-1])
                 else:
-                    f[i][j] = (f[i][j-1] & (s1[j-1] == s2[i+j-1])) | (f[i-1][j] & (s2[i-1] == s2[i+j-1]))
+                    f[i][j] = (f[i][j-1] & (s1[j-1] == s3[i+j-1])) | (f[i-1][j] & (s2[i-1] == s3[i+j-1]))
 
         return f[-1][-1]
         
