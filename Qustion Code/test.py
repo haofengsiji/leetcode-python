@@ -1,27 +1,24 @@
 from typing import List
 from collections import defaultdict 
+import sys
 
 class Solution:
-    def isInterleave(self, s1: str, s2: str, s3: str) -> bool:
-        n = len(s1)
-        m = len(s2)
-        if m+n != len(s3): return False
+    def splitArray(self, nums: List[int], m: int) -> int:
+        n = len(nums)
+        dp = [[sys.maxsize]*(n+1) for _ in range(m)]
 
-        f = [[False]*(n+1) for _ in range(m+1)]
+        sub = [0]
+        for i in range(n):
+            sub.append(sub[-1]+nums[i])
 
-        for i in range(m+1):
-            for j in range(n+1):
-                if i == 0 and j == 0:
-                    f[i][j] = True
-                elif i == 0:
-                    f[i][j] = f[i][j-1] & (s1[j-1] == s3[i+j-1])
-                elif j == 0:
-                    f[i][j] = f[i-1][j] & (s2[i-1] == s3[i+j-1])
-                else:
-                    f[i][j] = (f[i][j-1] & (s1[j-1] == s3[i+j-1])) | (f[i-1][j] & (s2[i-1] == s3[i+j-1]))
-
-        return f[-1][-1]
+        dp[0][0] = 0
+        for i in range(1,n):
+            for j in range(1,min(i+1,m)):
+                for k in range(1,i+1):
+                    dp[j][i] = min(dp[j][i],max(dp[j-1][i-k],sub[i]-sub[i-k]))
+        
+        return dp[m][n]
         
 if __name__ == "__main__":
     s = Solution()
-    print(s.isInterleave("aabcc","dbbca","aadbbcbcac"))
+    print(s.splitArray([7,2,5,10,8],2))
