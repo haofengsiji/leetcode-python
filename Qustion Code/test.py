@@ -3,37 +3,29 @@ from collections import defaultdict
 import sys
 
 class Solution:
-    def restoreIpAddresses(self, s: str) -> List[str]:
-        self.anss = []
-        self.dfs(s,'','',0)
-        return self.anss
+    def floodFill(self, image: List[List[int]], sr: int, sc: int, newColor: int) -> List[List[int]]:
+        m = len(image)
+        if m == 0: return []
+        n = len(image[0])
+        visited = [[0]*n for _ in range(m)]
+        org_val = image[sr][sc]
 
-    def dfs(self,res_s,ans,cur,cnt):
-        # 满足规则
-        if cnt >= 4:
-            return
-        if cur != '' and int(cur)>255:
-            return
+        def dfs(row,col):
+            if visited[row][col]: return
+            visited[row][col] = 1
+            d = [(0,1),(0,-1),(1,0),(-1,0)]
+            if image[row][col] == org_val:
+                image[row][col] = newColor
+                for dx,dy in d:
+                    dfs(row+dx,col+dy)
+            return 
         
-        # 符合条件的返回
-        if res_s == '':
-            if cnt == 3:
-                if cur == '0' or cur[0] != '0':
-                    ans = ans + '.' + cur
-                    self.anss.append(ans[1:])
-            return
-        
-        # 分割
-        if cur != '':
-            if cur == '0' or cur[0] != '0':
-                self.dfs(res_s, ans + '.' + cur, '', cnt + 1)
-            
+        dfs(sr,sc)
 
-            
-        # 不分割
-        self.dfs(res_s[1:],ans, cur + res_s[0], cnt)
-        return
+        return  image
+                
+                    
 
 if __name__ == "__main__":
     s = Solution()
-    print(s.restoreIpAddresses("010010"))
+    print(s.floodFill([[1,1,1],[1,1,0],[1,0,1]],1,1,2))
