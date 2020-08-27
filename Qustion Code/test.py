@@ -11,13 +11,14 @@ class Solution:
         org_val = image[sr][sc]
 
         def dfs(row,col):
-            if visited[row][col]: return
-            visited[row][col] = 1
-            d = [(0,1),(0,-1),(1,0),(-1,0)]
-            if image[row][col] == org_val:
-                image[row][col] = newColor
-                for dx,dy in d:
-                    dfs(row+dx,col+dy)
+            if 0 <= row < m and 0 <= col < n:
+                if visited[row][col]: return
+                visited[row][col] = 1
+                d = [(0,1),(0,-1),(1,0),(-1,0)]
+                if image[row][col] == org_val:
+                    image[row][col] = newColor
+                    for dx,dy in d:
+                        dfs(row+dx,col+dy)
             return 
         
         dfs(sr,sc)
