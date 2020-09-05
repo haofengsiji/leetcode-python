@@ -3,24 +3,24 @@ from collections import defaultdict
 import sys
 
 class Solution:
-    def compress(self, chars: List[str]) -> int:
-        i,j = 0,0
-        for read,c in enumerate(chars):
-            if read+1 == len(chars) or chars[read+1] != c:
-                chars[j] = chars[i]
-                j += 1
-                if read > i:
-                    digits = str(read - i + 1)
-                    for digit in digits:
-                        chars[j] = digit
-                        j += 1
-                i = read + 1
-        return i
+    def longestPalindromeSubseq(self, s: str) -> int:
+        n = len(s)
+        ans = 1
+        dp = [[0]*n for _ in range(n)]
+        for j in range(n):
+            for i in range(j,-1,-1):
+                if i == j:
+                    dp[i][j] = 1
+                else:
+                    if s[i] == s[j]:
+                        dp[i][j] = dp[i+1][j-1] + 2
+                        ans = max(dp[i][j],ans)
+                    else:
+                        dp[i][j] = max(dp[i+1][j],dp[i][j-1])
+        return ans
                 
                     
 
 if __name__ == "__main__":
-    chars = ["a","a","a","b","b","a","a"]
     s = Solution()
-    s.compress(chars)
-    print(chars)
+    print(s.longestPalindromeSubseq("aaa"))
