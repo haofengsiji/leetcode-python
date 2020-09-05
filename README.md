@@ -99,6 +99,7 @@
 | 409  | [最长回文串](https://leetcode-cn.com/problems/longest-palindrome/) | 1.统计偶数，中心+1                                           |
 | 410  | [分割数组的最大值](https://leetcode-cn.com/problems/split-array-largest-sum/) | 1. [动态规划](https://leetcode-cn.com/problems/split-array-largest-sum/solution/fen-ge-shu-zu-de-zui-da-zhi-by-leetcode-solution/), 「将数组分割为 m*m* 段，求……」是动态规划题目常见的问法。<br />2. [二分查找](https://leetcode-cn.com/problems/split-array-largest-sum/solution/wo-geng-xi-huan-de-er-fen-xie-fa-by-haofengsiji/)， 「使……最大值尽可能小」是二分搜索题目常见的问法。 |
 | 415  | [字符串相加](https://leetcode-cn.com/problems/add-strings/)  | 1.[ASCII码转换](https://leetcode-cn.com/problems/add-strings/solution/python-wu-int-by-haofengsiji/)，不能用int() |
+| 443  | [压缩字符串](https://leetcode-cn.com/problems/string-compression/) | 1. [双指针](https://leetcode-cn.com/problems/string-compression/solution/ya-suo-zi-fu-chuan-by-leetcode/)，write 写原字符串，anchor锚定比较位，for read,c in enumerate(chars), read+1 表示后一位，c 表示当前位进行比较。 |
 | 543  | [二叉树的直径](https://leetcode-cn.com/problems/diameter-of-binary-tree/) | 1.[递归](https://leetcode-cn.com/problems/diameter-of-binary-tree/solution/er-cha-shu-de-zhi-jing-by-leetcode-solution/)，左长，右长，交给递归来解决 |
 | 560  | [和为K的子数组](https://leetcode-cn.com/problems/subarray-sum-equals-k/) | 1.遍历<br />2.前缀和，哈希表查找 prefix - k                  |
 | 646  | [最长数对链](https://leetcode-cn.com/problems/maximum-length-of-pair-chain/) | 1.先排序，后链接                                             |

@@ -3,30 +3,24 @@ from collections import defaultdict
 import sys
 
 class Solution:
-    def floodFill(self, image: List[List[int]], sr: int, sc: int, newColor: int) -> List[List[int]]:
-        m = len(image)
-        if m == 0: return []
-        n = len(image[0])
-        visited = [[0]*n for _ in range(m)]
-        org_val = image[sr][sc]
-
-        def dfs(row,col):
-            if 0 <= row < m and 0 <= col < n:
-                if visited[row][col]: return
-                visited[row][col] = 1
-                d = [(0,1),(0,-1),(1,0),(-1,0)]
-                if image[row][col] == org_val:
-                    image[row][col] = newColor
-                    for dx,dy in d:
-                        dfs(row+dx,col+dy)
-            return 
-        
-        dfs(sr,sc)
-
-        return  image
+    def compress(self, chars: List[str]) -> int:
+        i,j = 0,0
+        for read,c in enumerate(chars):
+            if read+1 == len(chars) or chars[read+1] != c:
+                chars[j] = chars[i]
+                j += 1
+                if read > i:
+                    digits = str(read - i + 1)
+                    for digit in digits:
+                        chars[j] = digit
+                        j += 1
+                i = read + 1
+        return i
                 
                     
 
 if __name__ == "__main__":
+    chars = ["a","a","a","b","b","a","a"]
     s = Solution()
-    print(s.floodFill([[1,1,1],[1,1,0],[1,0,1]],1,1,2))
+    s.compress(chars)
+    print(chars)
