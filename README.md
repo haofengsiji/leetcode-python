@@ -105,6 +105,7 @@
 | 516  | [最长回文子序列](https://leetcode-cn.com/problems/longest-palindromic-subsequence/) | 1. [动态规划](https://leetcode-cn.com/problems/longest-palindromic-subsequence/solution/zi-xu-lie-wen-ti-tong-yong-si-lu-zui-chang-hui-wen/)，在子串 `s[i..j]` 中，最长回文子序列的长度为 `dp[i][j]` |
 | 543  | [二叉树的直径](https://leetcode-cn.com/problems/diameter-of-binary-tree/) | 1.[递归](https://leetcode-cn.com/problems/diameter-of-binary-tree/solution/er-cha-shu-de-zhi-jing-by-leetcode-solution/)，左长，右长，交给递归来解决 |
 | 560  | [和为K的子数组](https://leetcode-cn.com/problems/subarray-sum-equals-k/) | 1.遍历<br />2.前缀和，哈希表查找 prefix - k                  |
+| 617  | [ 合并二叉树](https://leetcode-cn.com/problems/merge-two-binary-trees/) | 1. [递归](https://leetcode-cn.com/problems/merge-two-binary-trees/solution/617-he-bing-er-cha-shu-san-chong-di-gui-yi-chong-d/)<br />2. [迭代](https://leetcode-cn.com/problems/merge-two-binary-trees/solution/617-he-bing-er-cha-shu-san-chong-di-gui-yi-chong-d/) |
 | 646  | [最长数对链](https://leetcode-cn.com/problems/maximum-length-of-pair-chain/) | 1.先排序，后链接                                             |
 | 680  | [验证回文字符串 Ⅱ](https://leetcode-cn.com/problems/valid-palindrome-ii/) | 1. [双指针](https://leetcode-cn.com/problems/valid-palindrome-ii/solution/yan-zheng-hui-wen-zi-fu-chuan-ii-by-leetcode-solut/)，先判断是否回文，如果不是，删除一个后，在给一次机会 |
 | 685  | [冗余连接 II](https://leetcode-cn.com/problems/redundant-connection-ii/) | 1. [并查集](https://leetcode-cn.com/problems/redundant-connection-ii/solution/bing-cha-ji-java-by-liweiwei1419/)，以入度为突破口，不能有环（环的检查用并查集） |
